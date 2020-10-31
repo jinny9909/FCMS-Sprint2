@@ -133,7 +133,7 @@
                 <img src=<?php echo $image_packageA ?> class="img-rounded" alt="chinese food">
               </div>
               <div class="lower">
-                <span>Catering Package A</span>
+                <span> Chinese Catering Package</span>
               </div>
             </a>
           </div>
@@ -145,7 +145,7 @@
                 <img src=<?php echo $image_packageB ?> alt="western food">
               </div>
               <div class="lower">
-                <span>Catering Package B</span>
+                <span>Western Catering Package</span>
               </div>
             </a>
           </div>
@@ -157,7 +157,7 @@
                 <img src=<?php echo $image_packageC ?> alt="mix package">
               </div>
               <div class="lower">
-                <span>Catering Package C</span>
+                <span>Mix Catering Package</span>
               </div>
             </a>
           </div>
