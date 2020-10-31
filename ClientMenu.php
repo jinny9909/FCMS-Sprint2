@@ -21,7 +21,7 @@
 
 </head>
 
-<body id="page-top">
+<body>
 
 <?php
     include 'include/ClientsNavBar.php';
