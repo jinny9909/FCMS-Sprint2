@@ -8,7 +8,8 @@
 		<meta name = "viewport" content = "width=device-width, initial-scales">
 		
 		<link rel="stylesheet" href="styles/MT_OTAccCreation.css">
-		
+		<link rel="stylesheet" href="styles/all.min.css">
+
 		<?php
         include 'include/NavBarStyle.php';
   		?>
