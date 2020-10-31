@@ -11,12 +11,12 @@
     
     <!-- navbar css -->
     <?php
-        include 'include/NavBarStyle.php';
+        //include 'include/NavBarStyle.php';
     ?>
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <title>Client Create Account</title>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -27,7 +27,7 @@
 
 <body>
     <?php
-        include 'include/ClientsNavBar.php';
+        //include 'include/ClientsNavBar.php';
     ?>
     
     <div class="signup-form">
@@ -63,10 +63,17 @@
                             <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
                         </div>
                     </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <input type="tel" class="form-control" name="phone_number" placeholder="Phone number" required="required">
+                    </div>
                 </div>
             </div>
 
-        <!--Personal details card-->
+        <!--Personal details card->
         <div class="card text-white" style="width: 330px">
           <div class="card-header"><h3>Personal Details</h3></div>
           <div class="card-body">
@@ -77,11 +84,11 @@
                     </span>
                     <input type="tel" class="form-control" name="phone_number" placeholder="Phone number" required="required">
                 </div>
-            </div>
+            </div->
 
 
             <!--Address-->
-            <div class="form-group">
+            <!--div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon">
                         <i class="fa fa-home"></i>
@@ -139,7 +146,7 @@
                 </div>
             </div>
           </div>
-        </div>
+        </div-->
 
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="membershipCheckBox" name="createMembership">
@@ -191,14 +198,13 @@
             }
 
             //Escape special characters for $db connection
-            $clientID = rand(1,200);
 			$username = mysqli_real_escape_string($db, sanitise_input($_POST['username']));
             $email = mysqli_real_escape_string($db, sanitise_input($_POST['email']));
             $password = mysqli_real_escape_string($db, sanitise_input($_POST['password']));
             $phoneNum = mysqli_real_escape_string($db, sanitise_input($_POST['phone_number']));
-            $address = mysqli_real_escape_string($db, sanitise_input($_POST['floor_unit'].$_POST['street_address'].$_POST['city'].$_POST['state'].$_POST['zip_code']));
+            //$address = mysqli_real_escape_string($db, sanitise_input($_POST['floor_unit'].$_POST['street_address'].$_POST['city'].$_POST['state'].$_POST['zip_code']));
 
-            $sql2 = "INSERT INTO client (ClientID, MemberID, Username, Email, Password, PhoneNumber, Address) VALUES (''$clientID', 001,'$username', '$email','$password', '$phoneNum', '$address')";
+            $sql2 = "INSERT INTO client (ClientID, Username, Email, Password, PhoneNumber) VALUES ('$clientID','$username', '$email','$password', '$phoneNum')";
 			// execute query
 			if (mysqli_query($db, $sql2)){
 				echo"<br/>Successfully insert<br/>";	

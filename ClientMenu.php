@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +37,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-5" id="selected-detail">
                 <p>Chinese Catering Package</p>
                 <p>RM 500</p>
-                <p>Menu Detail</p>
+                <p>Menu Details</p>
                 <ul class="infomation">
                 <li>Chinese Fried Rice</li>
                 <li>Breaised Noodles</li>
@@ -41,6 +45,14 @@
                 <li>Omelette</li>
                 <li>Mixed Fresh Fruits</li>
                 </ul>
+                <?php
+                    $_SESSION["price"] = "500";
+                    $_SESSION["cName"] = "Chinese cuisines";
+                ?>
+                <div>
+                    <button type="button" onclick="location.href='ClientCheckout.php'" name="checkOut_catering" class="btn btn-primary btn-block btn-lg p-3 mb-2 bg-warning text-dark border-0">Checkout</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -70,7 +82,7 @@
                   <div class="outer">
                       <a href="#">
                           <div class="upper">
-                              <img src=<?php echo $image_packageC ?> alt="mix package">
+                              <img src="<?php echo $image_packageC?>" alt="mix package">
                           </div>
                           <div class="lower">
                               <span>Mix Catering Package</span>
@@ -89,19 +101,6 @@
     </div>
     <!-- /.container -->
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom JavaScript for this theme -->
-  <script src="js/scrolling-nav.js"></script>
 
 </body>
 
