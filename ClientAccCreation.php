@@ -14,7 +14,6 @@
         include 'include/NavBarStyle.php';
     ?>
     
-    <link rel="stylesheet" href="styles/all.min.css">
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">-->
     <title>Client Create Account</title>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,6 +23,14 @@
     <?php
         echo "<link rel='stylesheet' href='styles/ClientAccCreation_Style.css'>";
     ?>
+
+    <style>
+        .input-group-addon{
+            margin-right: 10px;
+            padding-top: 7px;
+            color: #0A0908;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,7 +42,7 @@
         <form method="post">
             <div class="card" style="width: 330px">
                 <div class="card-body">
-                    <h3>Create Client Account</h3>
+                    <h3 style="margin-bottom:20px;">Create Client Account</h3>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
