@@ -11,5 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 
     <link href="styles/navbar.css" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="styles/all.min.css">
     '
 ?>
