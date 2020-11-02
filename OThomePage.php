@@ -10,27 +10,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>MT Homepage</title>
+  <title>OT Homepage</title>
 
   <!-- Custom styles for this template -->
-  <link href="styles/MT_homePage.css" rel="stylesheet">
+  <link href="styles/OT_homePage.css" rel="stylesheet">
 
   <?php
         include 'include/NavBarStyle.php';
   ?>
 
   <style>
-  html{
-    min-height: 100%;
-    }
+      html{
+        min-width: 100%;
+      }
+
+      body{
+        background-image: url(images/3.jpg);
+        background-position: center;
+        padding-top: 50px; 
+        background-repeat:no-repeat;
+        background-size: cover;
+      }
   </style>
 
 </head>
 
-<body style="background-image: url(images/2.jpg);background-position: center;padding-top: 50px;">
+<body>
 
     <?php
-        include 'include/MTNavBar.php';
+        include 'include/OTNavBar.php';
         include 'include/StringPath.php';
     ?>
 
@@ -57,18 +65,6 @@
                             </div>
                             <div class="lower">
                                 <span>Edit OT and Client Account</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="outer">
-                        <a href="MTsales.php">
-                            <div class="upper">
-                                <i class="fas fa-chart-bar icon"></i>
-                            </div>
-                            <div class="lower">
-                                <span>Sales Statistic</span>
                             </div>
                         </a>
                     </div>
