@@ -1,41 +1,12 @@
-.progressBar {
-    margin-top: 6%;
-}
-
-.progressBar ul {
-    list-style:none;
-    position: relative;
-    padding: 0;
-}
-
-.progressBar ul:before{
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #ddd;
-}
-
-.progressBar ul li {
-    padding: 20px 30px;
-    position: relative;
-}
-
-.progressBar ul li div {
-    padding: 0px;
-}
-
-.progressBar ul li span {
-    color: #aaa;
-    position: absolute;
-    left: -18px;
-    font-size: 12px;
-    background-color: #e9ecef;
-    padding: 2px 0;
-}
-
-.progressBar ul .selected {
+/* old style */
+.selected {
     color:#A9927D;
+}
+
+.order{
+    margin-top: 80px;
+}
+
+.bold {
+    font-weight: bold;
 }

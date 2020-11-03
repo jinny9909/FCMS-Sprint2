@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="styles/ordersClient.css">
+    <link rel="stylesheet" type="text/css" href="styles/OTCateringPackage2.css">
     <title>CRUD Catering Packages</title>
     <?php
         include 'include/NavBarStyle.php';

@@ -2,7 +2,7 @@
 
 $SERVERNAME = "localhost";
 $USERNAME = "root";
-$PASSWORD = "";
+$PASSWORD = "admin";
 $DATABASE = "fcms";
 
 ?>
