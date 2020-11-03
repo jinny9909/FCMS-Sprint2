@@ -14,16 +14,11 @@
 
   <!-- Custom styles for this template -->
   <link href="styles/MT_homePage.css" rel="stylesheet">
+  <link href="styles/all.min.css" rel="stylesheet">
 
   <?php
         include 'include/NavBarStyle.php';
   ?>
-
-  <style>
-  html{
-    min-height: 100%;
-    }
-  </style>
 
 </head>
 
