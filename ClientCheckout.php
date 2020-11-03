@@ -18,25 +18,25 @@
         include 'include/NavBarStyle.php';
     ?>
     
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">-->
     <title>Client Create Account</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
     <?php
         echo "<link rel='stylesheet' href='styles/ClientCheckout_Style.css'>";
     ?>
 </head>
 
-<body>
+<body style="background-color: #A9927D;">
     <?php
         include 'include/ClientsNavBar.php';
     ?>
     
-    <div class="signup-form">
+    <div class="signup-form" style="margin-top: 100px;">
         <form method="post">
-            <div class="card text-white" style="width: 330px">   
+            <div class="card" style="width: 330px">   
                 <div class="card-body">
                     <h2>Checkout Catering Order</h2>
                     <div class="form-group">
@@ -48,7 +48,7 @@
 
                     <div class="form-group">
                         <div class="input-group text-right">
-                            <p>Catering event number of people: </p>
+                            <label for="inputPax" class="input">Catering event number of people: </label>
                             <select id="inputPax" name="pax" class="form-control">
                                 <option disabled selected value="">Choose a number of people</option>
                                 <option value="1">1</option>

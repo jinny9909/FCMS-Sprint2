@@ -1,0 +1,36 @@
+#function{
+    padding: 80px 0px;
+}
+
+#function .outer{
+    background: #A9927D;
+    opacity: 0.9;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.08);
+    padding: 20px 0px 0px 20px ;
+    margin: 20px;
+}
+
+#function .lower{
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#function .upper{
+    text-align: center;
+}
+
+#function a{
+    color: black;
+    text-decoration-line: none;
+}
+
+.icon{
+    font-size: 100px;
+    color: black;
+}
+
+.upper :hover{
+    opacity: 0.5;
+}
