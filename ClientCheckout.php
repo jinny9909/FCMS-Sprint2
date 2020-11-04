@@ -70,7 +70,7 @@
             <!--Catering order delivery address-->
             <div class="card text-white" style="width: 330px">
                 <div class="card-body">
-                    <h2>Catering Event Venue</h2></div>
+                    <h3>Catering Event Venue</h3></div>
                     <div class="card-body">
                         <div class="form-group">
                             <div class="input-group">
