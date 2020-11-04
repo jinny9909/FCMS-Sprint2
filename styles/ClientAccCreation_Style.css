@@ -118,6 +118,14 @@ body {
     font-size: 21px;
 }
 
+.signup-form .fa-check {
+    color: #fff;
+    left: 19px;
+    top: 19px;
+    font-size: 7px;
+    position: absolute;
+}
+
 input:focus, textarea:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
