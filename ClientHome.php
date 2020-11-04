@@ -55,21 +55,21 @@
             <div class="carousel-item active" style="height: 750px">
                 <img class="d-block w-100" src="images\FoodCarousel\homeslide1.png" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 id="slides">Welcome To FoodEdge Gourment</h2>
+                    <h2 class="txt">Welcome To FoodEdge Gourment</h2>
                     <p>Best Catering services in Kuching Sarawak!</p>
                 </div>
             </div>
             <div class="carousel-item" style="height: 750px">
                 <img class="d-block w-100" src="images\FoodCarousel\homeslide2.png" alt="Second slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 id="slides">Welcome To FoodEdge Gourment</h2>
+                    <h2 class="txt" >Welcome To FoodEdge Gourment </h2>
                     <p>Best Catering services in Kuching Sarawak!</p>
                 </div>
             </div>
             <div class="carousel-item" style="height: 750px">
                 <img class="d-block w-100" src="images\FoodCarousel\homeslide3.png" alt="Third slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 id="slides">Welcome To FoodEdge Gourment</h2>
+                    <h2 class="txt">Welcome To FoodEdge Gourment</h2>
                     <p>Best Catering services in Kuching Sarawak!</p>
                 </div>
             </div>
