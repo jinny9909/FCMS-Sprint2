@@ -1,107 +1,100 @@
-  .footera {
-    background-color: #5E503F;
-    color: grey;
-    padding-top: 2rem;
-  }
+.slide {
+  height: 750px;
+}
 
-  hr.light {
-    border-top: 1px;
-  }
+.footera {
+  background-color: #5E503F;
+  color: grey;
+  padding-top: 2rem;
+}
 
-  footer a {
-    color: 5E503F;
-  }
+hr.light {
+  border-top: 1px;
+}
 
-  #footermain {
-    background-color: #5e503f;
-  }
+footer a {
+  color: 5E503F;
+}
+h2.txt {
+  color: #dbc8b0;
+  border: #a9927d;
+  border-width: 1px;
+  font-size: 2.4rem;
+  text-shadow: 2px 2px #686464;
+}
 
-  #copyright {
-    background-color: grey;
-  }
+p.slidetxt{
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px #686464;
+}
 
-  #aboutushome {
-    background-color: #a9927d;
+.footermain {
+  background-color: #5e503f;
+}
 
-  }
+#copyright {
+  background-color: grey;
+}
 
-  .display-5 {
-    color: #f2f4f3;
-  }
+#aboutushome {
+  background-color: #a9927d;
 
-  .lead {
-    color: #fef4f3;
-  }
+}
 
-  .gap {
-    padding: 70px 0px;
-  }
+.display-5 {
+  color: #f2f4f3;
+}
+
+.lead {
+  color: #fef4f3;
+}
+
+.gap {
+  padding: 70px 0px;
+}
 
 
-  #menu {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+#menu {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
-  .slide1 {
-    background-image: url('../images/homeslide1.png');
-    height: 750px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+#fixedImage {
+  background-image: url("../images/fixed.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 30%;
+  width: 100%;
+  background-size: cover;
+}
+footer a {
+  color: 5E503F;
+}
 
-  .slide2 {
-    background-image: url('../images/homeslide2.png');
-    height: 750px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+#footermain {
+  background-color: #5e503f;
+}
 
-  .slide3 {
-    background-image: url('../images/homeslide3.png');
-    height: 750px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+#copyright {
+  background-color: grey;
+}
+footer a {
+  color: 5E503F;
+}
 
-  #fixedImage {
-    background-image: url("../images/fixed.jpeg");
-    background-size: cover;
-    background-attachment: fixed;
-    height: 30%;
-    width: 100%;
-    background-size: cover;
-  }
-  footer a {
-    color: 5E503F;
-  }
+#footercolor {
+  background-color: #5e503f;
+}
 
-  #footermain {
-    background-color: #5e503f;
-  }
+.copyright {
+  color: white;
+}
 
-  #copyright {
-    background-color: grey;
-  }
-  footer a {
-    color: 5E503F;
-  }
-
-  #footercolor {
-    background-color: #5e503f;
-  }
-
-  .copyright {
-    color: white;
-  }
-  
-  .footertext{
-    color:white;
-  }
-  .hometext{
-    color: #f2f4f3;
-    size: 2.5rem;
-  }
+.footertext{
+  color:white;
+}
+.hometext{
+  color: #f2f4f3;
+  size: 2.5rem;
+}

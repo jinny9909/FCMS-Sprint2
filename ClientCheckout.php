@@ -17,16 +17,9 @@
     <?php
         include 'include/NavBarStyle.php';
     ?>
-    
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <title>Client Create Account</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <?php
-        echo "<link rel='stylesheet' href='styles/ClientCheckout_Style.css'>";
-    ?>
+    <link rel='stylesheet' href='styles/ClientCheckout_Style.css'>
 </head>
 
 <body>
@@ -74,75 +67,77 @@
                 </div>
             </div>
 
-        <!--Catering order delivery address-->
-        <div class="card text-white" style="width: 330px">
-          <div class="card-header"><h3>Catering Event Venue</h3></div>
-          <div class="card-body">
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="floor_unit" placeholder="Floor/Unit #" required="required">
+            <!--Catering order delivery address-->
+            <div class="card text-white" style="width: 330px">
+                <div class="card-body">
+                    <h3>Catering Event Venue</h3></div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="floor_unit" placeholder="Floor/Unit #" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="street_address" placeholder="Street address" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select id="inputState" name="state" class="form-control" onclick="inputPax()">
+                                    <option disabled selected value="">Choose a state</option>
+                                    <option value="Sarawak">Sarawak</option>
+                                    <option value="Sabah">Sabah</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select id="inputState" name="city" class="form-control">
+                                    <option disabled selected value="">Choose a city</option>
+                                    <optgroup label = "Sarawak">
+                                        <option value="Kuching">Kuching</option>
+                                        <option value="Bintulu">Bintulu</option>
+                                        <option value="Kapit">Kapit</option>
+                                        <option value="Limbang">Limbang</option>
+                                        <option value="Miri">Miri</option>
+                                        <option value="Sarikei">Sarikei</option>
+                                        <option value="Sibu">Sibu</option>
+                                        <option value="Simanggang">Simanggang</option>
+                                        <option value="Sri Aman">Sri Aman</option>
+                                    </optgroup>
+
+                                    <optgroup label = "Sabah">
+                                        <option value="Kota Kinabalu">Kota Kinabalu</option>
+                                        <option value="Kudat">Kudat</option>
+                                        <option value="Lahad Datu">Lahad Datu</option>
+                                        <option value="Papar">Papar</option>
+                                        <option value="Putatan">Putatan</option>
+                                        <option value="Ranau">Ranau</option>
+                                        <option value="Sandakan">Sandakan</option>
+                                        <option value="Tawau">Tawau</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div id="sessionDisplay">
+                    <?php  if(isset($_SESSION['cName']) && !empty($_SESSION['cName'])){?>
+                    <p>The selected catering package is: </br><?php echo $_SESSION['cName'];}?></p>
+
+                    <?php  if(isset($_SESSION['price']) && !empty($_SESSION['price'])){?>
+                    <p>Catering order total amount: <?php echo $_SESSION['price'];}?></p>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" name="submit_ordrCheckout" class="btn btn-primary btn-block btn-lg">Proceed to payment</button>
                 </div>
             </div>
-
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="street_address" placeholder="Street address" required="required">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="input-group">
-                    <select id="inputState" name="state" class="form-control" onclick="inputPax()">
-                        <option disabled selected value="">Choose a state</option>
-                        <option value="Sarawak">Sarawak</option>
-                        <option value="Sabah">Sabah</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="input-group">
-                    <select id="inputState" name="city" class="form-control">
-                        <option disabled selected value="">Choose a city</option>
-                        <optgroup label = "Sarawak">
-                            <option value="Kuching">Kuching</option>
-                            <option value="Bintulu">Bintulu</option>
-                            <option value="Kapit">Kapit</option>
-                            <option value="Limbang">Limbang</option>
-                            <option value="Miri">Miri</option>
-                            <option value="Sarikei">Sarikei</option>
-                            <option value="Sibu">Sibu</option>
-                            <option value="Simanggang">Simanggang</option>
-                            <option value="Sri Aman">Sri Aman</option>
-                        </optgroup>
-
-                        <optgroup label = "Sabah">
-                            <option value="Kota Kinabalu">Kota Kinabalu</option>
-                            <option value="Kudat">Kudat</option>
-                            <option value="Lahad Datu">Lahad Datu</option>
-                            <option value="Papar">Papar</option>
-                            <option value="Putatan">Putatan</option>
-                            <option value="Ranau">Ranau</option>
-                            <option value="Sandakan">Sandakan</option>
-                            <option value="Tawau">Tawau</option>
-                        </optgroup>
-                    </select>
-                </div>
-            </div>
-            </div>
-        </div> 
-
-        <div id="sessionDisplay">
-            <?php  if(isset($_SESSION['cName']) && !empty($_SESSION['cName'])){?>
-            <p>The selected catering package is: </br><?php echo $_SESSION['cName'];}?></p>
-
-            <?php  if(isset($_SESSION['price']) && !empty($_SESSION['price'])){?>
-            <p>Catering order total amount: <?php echo $_SESSION['price'];}?></p>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" name="submit_ordrCheckout" class="btn btn-primary btn-block btn-lg">Proceed to payment</button>
-        </div>
         </form>
     </div>
 

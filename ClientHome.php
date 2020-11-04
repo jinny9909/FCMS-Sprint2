@@ -2,100 +2,87 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>Homepage</title>
-  <link rel="stylesheet" href="styles/client_catering.css">
-  <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="styles/client_homepage.css">
-  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="stylesheet/footer.css">
-  <?php
-  include 'include/NavBarStyle.php';
-  ?>
+    <title>Homepage</title>
+    
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="styles/client_homepage.css">
+    <link rel="stylesheet" href="styles/client_catering.css">
+    <link rel="stylesheet" href="stylesheet/footer.css">
+    <?php
+    include 'include/NavBarStyle.php';
+    ?>
 </head>
 
 <body id="page-top">
 
-  <!-- Navigation -->
-  <?php
-  include 'include/ClientsNavBar.php';
-  include 'include/StringPath.php';
-  ?>
-  <div id="fb-root"></div>
-  <script>
+<!-- Navigation -->
+<?php
+    include 'include/ClientsNavBar.php';
+    include 'include/StringPath.php';
+?>
+<div id="fb-root"></div>
+<script>
     window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v8.0'
-      });
+        FB.init({
+            xfbml: true,
+            version: 'v8.0'
+        });
     };
 
     (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-  </script>
+</script>
 
-  <!-- Your Chat Plugin code -->
-  <div class="fb-customerchat" attribution=setup_tool page_id="101015995130353" theme_color="#d4a88c" logged_in_greeting="Hi there!!! How can we help you?" logged_out_greeting="Hi there!!! How can we help you?">
-  </div>
-
-  <!--End of nav bar-->
-  <!--Slide Show-->
-  <div id="theCarousel" class="carousel slide" data-ride="carousel">
-
-    <ol class="carousel-indicators">
-      <li data-target="#theCarousel" data-slide-to="0" class="active"> </li>
-      <li data-target="#theCarousel" data-slide-to="1"> </li>
-      <li data-target="#theCarousel" data-slide-to="2"> </li>
-    </ol>
-
-    <!-- Define the text to place over the image -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <div class="slide1"></div>
-        <div class="carousel-caption">
-          <h1>Welcome To Foodedge Gourmate</h1>
-          <p>Best Catering services in Kuching Sarawak</p>
-
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat" attribution=setup_tool page_id="101015995130353" theme_color="#d4a88c" logged_in_greeting="Hi there!!! How can we help you?" logged_out_greeting="Hi there!!! How can we help you?">
+</div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="height: 750px">
+                <img class="d-block w-100" src="images\FoodCarousel\homeslide1.png" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="txt">Welcome To FoodEdge Gourment</h2>
+                    <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 750px">
+                <img class="d-block w-100" src="images\FoodCarousel\homeslide2.png" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="txt">Welcome To FoodEdge Gourment </h2>
+                    <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 750px">
+                <img class="d-block w-100" src="images\FoodCarousel\homeslide3.png" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="txt">Welcome To FoodEdge Gourment</h2>
+                    <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="item">
-        <div class="slide2"></div>
-        <div class="carousel-caption">
-          <h1>Welcome To Foodedge Gourmate</h1>
-          <p>Best Catering services in Kuching Sarawak</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="slide3"></div>
-        <div class="carousel-caption">
-          <h1>Welcome To Foodedge Gourmate</h1>
-          <p>Best Catering services in Kuching Sarawak</p>
-        </div>
-      </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-
-
-    <a class="left carousel-control" href="#theCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"> </span>
-    </a>
-    <a class="right carousel-control" href="#theCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-  </div>
-  <!-- Endof slide show-->
-
-
 
   <!--about start-->
 

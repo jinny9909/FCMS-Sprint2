@@ -6,6 +6,19 @@
     background: linear-gradient(45deg,#a9927d,#5e503f);
 }
 
+.elementCenter {
+    text-align: center;
+}
+
+.textWhite {
+    color:#F2F4F3;
+}
+
+#submit {
+    color:#F2F4F3;
+    background-color: #49111C;
+}
+
 #copyright {
     background-color: #5E503f;
 }
