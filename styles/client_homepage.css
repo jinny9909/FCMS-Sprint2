@@ -15,8 +15,11 @@ hr.light {
 footer a {
   color: 5E503F;
 }
+#slides {
+  color: #5E503F;
+}
 
-#footermain {
+.footermain {
   background-color: #5e503f;
 }
 
