@@ -16,7 +16,17 @@ footer a {
   color: 5E503F;
 }
 h2.txt {
-  color: #5E503F;
+  color: #dbc8b0;
+  border: #a9927d;
+  border-width: 1px;
+  font-size: 2.4rem;
+  text-shadow: 2px 2px #686464;
+}
+
+p.slidetxt{
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px #686464;
 }
 
 .footermain {
