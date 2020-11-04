@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="styles/MT_OTAccCreation.css">
 		
 		<?php
-        include 'include/NavBarStyle.php';
+        	include 'include/NavBarStyle.php';
   		?>
 		
 	</head>
@@ -53,7 +53,8 @@
 		<!--Insert a new operation team account-->
 		<?php	
 			// Create database connection
-			$db = mysqli_connect("localhost", "root", "", "fcms");
+			include "backend/DatabaseConnect.php";
+			$db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 				
 			//Uncomment this section to check database connection
 			/*if($db){
