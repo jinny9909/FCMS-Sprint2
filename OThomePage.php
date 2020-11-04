@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>MT Homepage</title>
+  <title>OT Homepage</title>
 
   <!-- Custom styles for this template -->
   <link href="styles/MT_homePage.css" rel="stylesheet">
@@ -27,10 +27,10 @@ html{
 </style>
 </head>
 
-<body style="background-image: url(images/2.jpg);background-position: center;padding-top: 50px;">
+<body style="background-image: url(images/3.jpg);background-position: center;padding-top: 50px;">
 
     <?php
-        include 'include/MTNavBar.php';
+        include 'include/OTNavBar.php';
         include 'include/StringPath.php';
     ?>
 
