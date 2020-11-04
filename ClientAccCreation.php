@@ -173,15 +173,16 @@
 
     <!--Insert a new client account-->
 	<?php	
-		// Create database connection
-		$db = mysqli_connect("localhost", "root", "", "fcms");
+        // Create database connection
+		include "backend/DatabaseConnect.php";
+        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 				
 		//Uncomment this section to check database connection
-		if($db){
-			echo"Successful Connect to DB<br/>";
-		}else{
-			die("fail");
-		}
+		//if($db){
+		//	echo"Successful Connect to DB<br/>";
+		//}else{
+		//	die("fail");
+		//}
 
 		//Sanitise the input
 		function sanitise_input($data) {
