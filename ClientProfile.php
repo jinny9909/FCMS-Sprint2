@@ -1,149 +1,99 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="FCMS">
+    <meta name="author" content="Ooi Kuan Hao"/>
+    <meta name="description" content="Client Profile Page"/>
+    <title>My Profile</title>
+   <!--link rel="stylesheet" href="ClientProfile_Style.css"-->
+
+    <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"-->
+    <!-- Google Fonts -->
+    <!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"-->
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <!--link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"-->
+    <link rel='stylesheet' href='styles/ClientProfile_Style.css'>
     <!-- navbar css -->
     <?php
         include 'include/NavBarStyle.php';
     ?>
-<!------ Include the above in your HEAD tag ---------->
+    
+</head>
+
+
+<body>
     <?php
         include 'include/ClientsNavBar.php';
     ?>
-<div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h5>
-                                        Jamil Olive All Predic
-                                    </h5>
-                                    <h6>
-                                        Web Developer and Designer
-                                    </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>User Id</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti123</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Jamil</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>j@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>4444444</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>10$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
+    
+    
+	<div class="container-fluid d-flex justify-content-center">
+
+            <div class=" col-md-10 mt-5 pt-5">
+             	<div class="row d-flex justify-content-center depth-3"><!--Center the content and put shadow-->
+                 	<!--div class="col-sm-4 bg-info rounded-left">
+        		        <div class="card-block text-center text-white">
+                    		<h2 class="font-weight-bold mt-4">Nickson</h2>
+                    		<p>Web Designer</p>
+                		</div>
+            		</div-->
+            		<div class="col-sm-8 " id="pInfo">
+                 	    <div class="col mx-auto">
+        		            <div class="card-block text-center ">
+                    		    <h2 class="font-weight-bold mt-4">Nickson</h2>
+                    		    <p>Membership ID:</p>
+                		    </div>
+            		    </div>
+
+                        <div class="col mx-auto">
+        		            <div class="card">
+                    	        <h3 class="text-center">Profile Information</h3>
+                    	        <!--hr class="mt-0 w-75"-->
+                   		       
+                        	        <div >
+                            	        <p class="font-weight-bold">Email:</p>
+                           		        <h6 class=" text-muted">nick32@gmail.com</h6>
+                        	        </div>
+                        	        <div>
+                            	        <p class="font-weight-bold">Phone:</p>
+                           		        <h6 class="text-muted">+921234567890</h6>
+                        	        </div>
+
+                                                       		       
+                        	        <div >
+                            	        <p class="font-weight-bold">Email:</p>
+                           		        <h6 class=" text-muted">nick32@gmail.com</h6>
+                        	        </div>
+                        	        <div>
+                            	        <p class="font-weight-bold">Phone:</p>
+                           		        <h6 class="text-muted">+921234567890</h6>
+                        	            <input type="text" id="test">
                                     </div>
-                                </div>
+
                             </div>
                         </div>
-                    </div>
-                </div>
-            </form>           
-        </div>
+
+                    	<!--h4 class="mt-3 text-center">Projects</h4>
+                    	<hr class="mt-0 w-50">
+                   		<div class="row">
+                        	<div class="col-sm-6">
+                           		<p class="font-weight-bold">Recent</p>
+                          	  	<h6 class="text-muted">School Web</h6>
+                        	</div>
+                        	<div class="col-sm-6">
+                            	<p class="font-weight-bold">Most Viewed</p>
+                            	<h6 class="text-muted">Dinoter husainm</h6>
+                        	</div>
+                    	</div>
+                	   	<hr-->
+              		</div>
+             	</div>
+            </div>
+	</div>
+</body>
+
+</html>
