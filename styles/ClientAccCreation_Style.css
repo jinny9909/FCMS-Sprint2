@@ -17,6 +17,13 @@ body {
     color: #636363;
 }
 
+
+.input-group-addon {
+    margin-right: 10px;
+    padding-top: 7px;
+    color: #0A0908 !important; /*Important to make browser overwrite bootstrap*/
+}
+
 /*text input bottom line color*/
 .form-control, .form-control:focus, .input-group-addon {
     border-color: #e1e1e1;

@@ -16,21 +16,13 @@
     
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">-->
     <title>Client Create Account</title>
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-    <?php
-        echo "<link rel='stylesheet' href='styles/ClientAccCreation_Style.css'>";
-    ?>
+    <link rel='stylesheet' href='styles/ClientAccCreation_Style.css'>"
 
-    <style>
-        .input-group-addon{
-            margin-right: 10px;
-            padding-top: 7px;
-            color: #0A0908;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -173,16 +165,15 @@
 
     <!--Insert a new client account-->
 	<?php	
-        // Create database connection
-		include "backend/DatabaseConnect.php";
-        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+		// Create database connection
+		$db = mysqli_connect("localhost", "root", "", "fcms");
 				
 		//Uncomment this section to check database connection
-		//if($db){
-		//	echo"Successful Connect to DB<br/>";
-		//}else{
-		//	die("fail");
-		//}
+		if($db){
+			echo"Successful Connect to DB<br/>";
+		}else{
+			die("fail");
+		}
 
 		//Sanitise the input
 		function sanitise_input($data) {
