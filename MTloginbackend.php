@@ -1,62 +1,59 @@
 <?php
 session_start();
-$sname= "localhost";
-$unmae= "root";
+$sname = "localhost";
+$unmae = "root";
 $password = "";
 $db_name = "fcms";
 
 $conn = mysqli_connect($sname, $unmae, $password, $db_name);
 
 if (!$conn) {
-	echo "Failed to connect MT table";
-
+    echo "Failed to connect MT table";
 }
 
 
 if (isset($_POST['uname']) && isset($_POST['password'])) {
 
-	function validate($data){
-       $data = trim($data);
-	   $data = stripslashes($data);
-	   $data = htmlspecialchars($data);
-	   return $data;
-	}
+    function validate($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
-	$uname = validate($_POST['uname']);
-	$pass = validate($_POST['password']);
+    $uname = validate($_POST['uname']);
+    $pass = validate($_POST['password']);
 
-	if (empty($uname)) {
-		header("Location: MTlogin.php?error=User Name is required");
-	    exit();
-	}else if(empty($pass)){
+    if (empty($uname)) {
+        header("Location: MTlogin.php?error=User Name is required");
+        exit();
+    } else if (empty($pass)) {
         header("Location: MTlogin.php?error=Password is required");
-	    exit();
-	}else{
-		$sql = "SELECT * FROM `mtaccount` WHERE user_name='$uname' AND password='$pass'";
+        exit();
+    } else {
+        $sql = "SELECT * FROM `mtaccount` WHERE user_name='$uname' AND password='$pass'";
 
-		$result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
 
-		if (mysqli_num_rows($result) === 1) {
-			$row = mysqli_fetch_assoc($result);
+        if (mysqli_num_rows($result) === 1) {
+            $row = mysqli_fetch_assoc($result);
             if ($row['user_name'] === $uname && $row['password'] === $pass) {
-            	$_SESSION['user_name'] = $row['user_name'];
-            	$_SESSION['name'] = $row['name'];
-            	$_SESSION['id'] = $row['id'];
-            	header("Location: MThomePage.php");
-		        exit();
-            }else{
-				header("Location: MTlogin.php?error=Incorect User name or password");
-		        exit();
-			}
-		}else{
-			header("Location: MTlogin.php?error=Incorect User name or password");
-	        exit();
-		}
-	}
-	
-}else{
-	header("Location: Mtlogin.php");
-	exit();
+                $_SESSION['user_name'] = $row['user_name'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['id'] = $row['id'];
+                header("Location: MThomePage.php");
+                exit();
+            } else {
+                header("Location: MTlogin.php?error=Incorect User name or password");
+                exit();
+            }
+        } else {
+            header("Location: MTlogin.php?error=Incorect User name or password");
+            exit();
+        }
+    }
+} else {
+    header("Location: Mtlogin.php");
+    exit();
 }
-
-?>
