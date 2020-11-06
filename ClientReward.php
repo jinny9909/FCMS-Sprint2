@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -10,6 +6,7 @@
     <meta name="description" content="FCMS">
     <meta name="author" content="Ooi Kuan Hao"/>
     <meta name="description" content="Client Reward Page"/>
+    <title>Reward Item</title>
     <!-- navbar css -->
     <?php
         include 'include/NavBarStyle.php';
@@ -46,10 +43,15 @@
                 <img src="<?php echo $row['ItemImgPath']; ?>" alt="Item Image">
             </div>
 
+            <div class="card-body mb-0 pb-0">
+                <p class="d-flex justify-content-center font-weight-bold mb-1">Redeeemed this item for: </p>
+                <h6 class="d-flex justify-content-center"><?php echo $row['ItemPoints']; ?> points</h6>
+            </div>
+
             <div class="card-body d-flex justify-content-center">
                 <div class="border w-75" id="clientDetails">
-                    <p class="font-weight-bold d-flex justify-content-center mb-1"><?php echo $clientName; ?></p>
-                    <h6 class="d-flex justify-content-center">MembershipID: <?php echo $memberID; ?></h6>
+                    <p class="font-weight-bold d-flex justify-content-center mb-1 mt-1"><?php echo $clientName; ?></p>
+                    <h6 class="d-flex justify-content-center"><b>MembershipID:</b> <?php echo $memberID; ?></h6>
 
                     <p class="font-weight-bold d-flex justify-content-center mb-1">Current Reward Points</p>
                     <h6 class="d-flex justify-content-center mb-3"><?php echo $rewardPoints; ?> points</h6>
