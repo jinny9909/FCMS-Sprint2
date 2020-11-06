@@ -21,79 +21,149 @@
     <?php
         include 'include/NavBarStyle.php';
     ?>
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script-->
 </head>
 
 
 <body>
     <?php
         include 'include/ClientsNavBar.php';
+
+        $usrName = ""; 
+        $phNum = ""; 
+        $emlAdd = ""; 
+        $pswrd = "";
+        $clientID = "CL00000004";
+        // connect to the database
+        include 'backend/DatabaseConnect.php'; // global variables for connection
+        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+        $selectSQL = "SELECT MemberID, Username, PhoneNumber, Email, Password FROM clients WHERE ClientID='$clientID'";
+        $result = $db->query($selectSQL);
+
+        if($result->num_rows>0){
+         while($row = $result->fetch_assoc()){
     ?>
-    
+
+
+
+    <!-- Edit Profile Information Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title font-weight-bold" id="editProfileModal">Edit and Update Profile Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <form method="post">
+              <div class="modal-body">
+
+                      <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="userName" id="userName" value="<?php echo $row['Username']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" name="phoneNum" id="phoneNum" value="<?php echo $row['PhoneNumber']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" name="email" id="email" value="<?php echo $row['Email']; ?>">
+                      </div>
+                      <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" class="form-control" name="password" id="password" value="<?php echo $row['Password']; ?>">
+                      </div>
+
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="submit" name="updateProfile" class="btn">Update and save changes</button>
+             </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
     
 	<div class="container-fluid d-flex justify-content-center">
+        <div class=" col-md-10 mt-5 pt-5">
+            <div class="row d-flex justify-content-center depth-3"><!--Center the content and put shadow-->
 
-            <div class=" col-md-10 mt-5 pt-5">
-             	<div class="row d-flex justify-content-center depth-3"><!--Center the content and put shadow-->
-                 	<!--div class="col-sm-4 bg-info rounded-left">
-        		        <div class="card-block text-center text-white">
-                    		<h2 class="font-weight-bold mt-4">Nickson</h2>
-                    		<p>Web Designer</p>
+            	<div class="col-sm-8 " id="pInfo">
+                 	<div class="col mx-auto">
+        		        <div class="card-block text-center ">
+                    		<h2 class="font-weight-bold mt-4"><?php echo $row['Username']; ?></h2>
+                    		<p>Membership ID: <?php echo $row['MemberID']; ?></p>
                 		</div>
-            		</div-->
-            		<div class="col-sm-8 " id="pInfo">
-                 	    <div class="col mx-auto">
-        		            <div class="card-block text-center ">
-                    		    <h2 class="font-weight-bold mt-4">Nickson</h2>
-                    		    <p>Membership ID:</p>
-                		    </div>
-            		    </div>
+            		</div>
 
-                        <div class="col mx-auto">
-        		            <div class="card">
-                    	        <h3 class="text-center">Profile Information</h3>
-                    	        <!--hr class="mt-0 w-75"-->
-                   		       
-                        	        <div >
-                            	        <p class="font-weight-bold">Email:</p>
-                           		        <h6 class=" text-muted">nick32@gmail.com</h6>
-                        	        </div>
-                        	        <div>
-                            	        <p class="font-weight-bold">Phone:</p>
-                           		        <h6 class="text-muted">+921234567890</h6>
-                        	        </div>
+                    <div class="col">
+        		        <div class="card">
+                    	    <h3 class="title2">Profile Information</h3>
+                        	    <div>
+                            	    <p class="font-weight-bold mt-3 mb-1">Phone Number:</p>
+                           		    <h6 class="text-muted">+<?php echo $row['PhoneNumber']; ?></h6>
+                        	    </div>
+                        	    <div >
+                            	    <p class="font-weight-bold mt-3 mb-1">Email Address:</p>
+                           		    <h6 class="text-muted mb-3"><?php echo $row['Email']; ?></h6>
+                        	    </div>
 
-                                                       		       
-                        	        <div >
-                            	        <p class="font-weight-bold">Email:</p>
-                           		        <h6 class=" text-muted">nick32@gmail.com</h6>
-                        	        </div>
-                        	        <div>
-                            	        <p class="font-weight-bold">Phone:</p>
-                           		        <h6 class="text-muted">+921234567890</h6>
-                        	            <input type="text" id="test">
-                                    </div>
-
-                            </div>
                         </div>
-
-                    	<!--h4 class="mt-3 text-center">Projects</h4>
-                    	<hr class="mt-0 w-50">
-                   		<div class="row">
-                        	<div class="col-sm-6">
-                           		<p class="font-weight-bold">Recent</p>
-                          	  	<h6 class="text-muted">School Web</h6>
-                        	</div>
-                        	<div class="col-sm-6">
-                            	<p class="font-weight-bold">Most Viewed</p>
-                            	<h6 class="text-muted">Dinoter husainm</h6>
-                        	</div>
-                    	</div>
-                	   	<hr-->
-              		</div>
-             	</div>
+                        <div class="d-flex justify-content-center" id="editButton">
+                            <button type="button" class="btn" id="editBtn" data-toggle="modal" data-target="#editProfileModal">Edit Profile</button>
+                        </div>
+                    </div>
+              	</div>
             </div>
+        </div>
 	</div>
-</body>
+    <?php
+        }
+    }
+    ?>
 
+    <?php
+        //Uncomment this section to check database connection
+		/*if($db){
+			echo"Successful Connect to DB<br/>";
+		}else{
+			die("fail");
+		}*/
+
+        //Sanitise the input
+		function sanitise_input($data) {
+			$data = trim($data);
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return $data;
+		}
+
+        //Make sure user clicked the submit button
+		if(isset($_POST['updateProfile'])){
+			$username = mysqli_real_escape_string($db, sanitise_input($_POST['userName']));
+			$phoneNum = mysqli_real_escape_string($db, sanitise_input($_POST['phoneNum']));
+			$emailAddrs = mysqli_real_escape_string($db, sanitise_input($_POST['email']));
+            $password = mysqli_real_escape_string($db, sanitise_input($_POST['password']));
+
+			$sql = "Update clients SET Username='$username', PhoneNumber='$phoneNum', Email='$emailAddrs', Password='$password' WHERE ClientID='CL00000004'";
+
+        	// execute query
+			if (mysqli_query($db, $sql)){
+				//echo"Successfully insert<br/>";
+			}else{
+				//echo"Failed to insert</br>";
+			}
+		}
+
+        $db->close();
+    ?>
+</body>
 </html>
