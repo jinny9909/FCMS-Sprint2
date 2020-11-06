@@ -1,0 +1,23 @@
+body {
+    background: #a9927d !important;
+    font-family: 'Quebec Serial Bold', sans-serif;
+}
+
+.btn {
+    margin-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 18px !important;
+    color: white !important;
+    background-color: #49111C !important;
+}
+
+#cardTitle {
+    background-color: #5E503F;
+    color: white !important;
+    padding: 10px 0 10px 0;
+}
+
+#clientDetails {
+    border-radius: 4px;
+    border-color: #5E503F;
+}
