@@ -44,36 +44,43 @@
 									<th class="text-center" >
 										Order Status
 									</th>
+									<th class="text-center" >
+										Edit
+									</th>
 								</tr>
 							</thead>
 							<?php
 							// Create database connection
 							$db = mysqli_connect("localhost", "root", "", "fcms");
-								
 							//Uncomment this section to check database connection
-							if($db){
-								echo"Successful Connect to DB<br/>";
-							}else{
+							if ($db) {
+								echo "Successful Connect to DB<br/>";
+							} else {
 								die("fail");
-				}
+							}
 							$sql = "SELECT OrderDate, OrderID, PackageID, TrackingStatus from orders";
 							$result=$db-> query($sql);
 							
 							if ($result-> num_rows >0){
 								while ($row = $result-> fetch_assoc()){
-									echo "<tr><td>".$row["OrderDate"]."</td><td>".$row["OrderID"]."</td><td>".$row["PackageID"]."</td><td>".$row["TrackingStatus"]."</td></tr>";
+									echo 
+									"<tr>
+										<td>".$row["OrderDate"]."</td>
+										<td>".$row["OrderID"]."</td>
+										<td>".$row["PackageID"]."</td>
+										<td>".$row["TrackingStatus"]."</td>
+										<td><button>Edit</button></td>
+									</tr>";
 								}
 							}
 							else{
 								echo "0 result";
 							}
 							$db-> close();
-							
 							?>
 						</table>
 					</div>
 				</div>
-				<button id="update" class="btn btn-warning float-right" type="submit" name="submit" >Update</button>
 			</form>
 		</div>
 	</body>
