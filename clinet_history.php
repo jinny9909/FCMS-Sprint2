@@ -11,13 +11,7 @@
 			include 'include/NavBarStyle.php';
 		?>
 		<style>
-			table{
-				margin-top: 100px;
-			}
-			td{
-				background-color: white;
-				text-align: center;
-			}
+			
 		</style>
 	</head>
 
@@ -26,62 +20,36 @@
 			include 'include/OTNavBar.php';
 		?>
 		<div class="container">
-			<form method="post">
-				<div class="row clearfix">
-					<div class="col-md-12 table-responsive">
-						<table class="table table-bordered table-hover table-sortable" id="tab_logic">
-							<thead class="table_heading">
-								<tr >
-									<th class="text-center">
-										Order Date
-									</th>
-									<th class="text-center">
-										 Order ID
-									</th>
-									<th class="text-center">
-										Package Option
-									</th>
-									<th class="text-center" >
-										Order Status
-									</th>
-									<th class="text-center" >
-										Edit
-									</th>
-								</tr>
-							</thead>
-							<?php
-							// Create database connection
-							$db = mysqli_connect("localhost", "root", "", "fcms");
-							//Uncomment this section to check database connection
-							if ($db) {
-								echo "Successful Connect to DB<br/>";
-							} else {
-								die("fail");
-							}
-							$sql = "SELECT OrderDate, OrderID, PackageID, TrackingStatus from orders";
-							$result=$db-> query($sql);
+			<div class="col">
+			<?php
+				// Create database connection
+				$db = mysqli_connect("localhost", "root", "", "fcms");
+				//Uncomment this section to check database connection
+				if ($db) {
+					echo "Successful Connect to DB<br/>";
+				} else {
+					die("fail");
+				}
+				$sql = "SELECT order_ID, order_date, package_ID, total_price from client_history";
+				$result=$db-> query($sql);
 							
-							if ($result-> num_rows >0){
-								while ($row = $result-> fetch_assoc()){
-									echo 
-									"<tr>
-										<td>".$row["OrderDate"]."</td>
-										<td>".$row["OrderID"]."</td>
-										<td>".$row["PackageID"]."</td>
-										<td>".$row["TrackingStatus"]."</td>
-										<td><button>Edit</button></td>
-									</tr>";
-								}
-							}
-							else{
-								echo "0 result";
-							}
-							$db-> close();
-							?>
-						</table>
-					</div>
-				</div>
-			</form>
+				if ($result-> num_rows >0){
+					while ($row = $result-> fetch_assoc()){
+						echo 
+						"<div>
+							<p>Order ID: ".$row["order_ID"]."</p>
+							<p>Order Date: ".$row["order_date"]."</p>
+							<p>Package ID: ".$row["package_ID"]."</p>
+							<p>Total Price: ".$row["total_price"]."</p>
+						</div>";
+						}
+					}
+					else{
+						echo "0 result";
+					}
+					$db-> close();
+			?>
+			</div>
 		</div>
 	</body>
 </html>
