@@ -12,6 +12,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="OTCateringPackage1.php">Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="OTUpdateOrders.php">Track</a></li>
+                <li class="nav-item"><a class="nav-link" href="OTTransactions.php">Transactions</a></li>
                 <li class="nav-item"><a class="nav-link" href=".php">Logout</a></li></li>
             </ul>
         </div>

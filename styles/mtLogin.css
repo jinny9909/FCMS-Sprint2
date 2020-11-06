@@ -31,11 +31,9 @@ background-color: rgba(0,0,0,0.5) !important;
     margin: 20px auto;
  }
 
-
 .card-header h3{
 color: white;
 }
-
 
 .input-group-prepend span{
 width: 50px;
@@ -43,8 +41,6 @@ background-color: #5e503f;
 color: black;
 
 }
-
-
 
 .remember{
 color: white;

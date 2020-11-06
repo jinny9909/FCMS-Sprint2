@@ -2,10 +2,6 @@
     background: linear-gradient(35deg,#a9927d,#5e503f);
 }
 
-.btn_del {
-    background: linear-gradient(45deg,#a9927d,#5e503f);
-}
-
 .elementCenter {
     text-align: center;
 }
@@ -16,7 +12,7 @@
 
 #submit {
     color:#F2F4F3;
-    background-color: #49111C;
+    background-color: #5E503f;
 }
 
 #copyright {

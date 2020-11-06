@@ -19,7 +19,6 @@
 			include 'include/MTNavBar.php';
 		?>
 		<div class = "container-fluid ">
-
 			<div class = "row box_1">
 				<div class = "col-md-4 col-sm-4 col-xs-12"></div>
 				<div class = "col-md-4 col-sm-4 col-xs-12">
