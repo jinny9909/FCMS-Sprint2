@@ -18,7 +18,23 @@ hr {
     background: white;
     text-align: center;
     margin-bottom: 10px;
-    padding: 10px 0 5px 0;
-    border-radius: 1px;
+    padding: 0px 0 10px 0;
+    border-radius: 3px;
+    border-color: #5E503F; 
     margin-bottom: 30px;
 }
+
+.btn {
+    margin-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 18px !important;
+    color: white !important;
+    background-color: #49111C !important;
+}
+
+.title2 {
+    background-color: #5E503F;
+    color: white !important;
+    padding: 10px 0 10px 0;
+}
+
