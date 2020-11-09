@@ -1,6 +1,5 @@
 <?php
-mysqli_connect("localhost", "root", "");
-mysql_select_db("fcms");
+$db = mysqli_connect("localhost", "root", "", "fcms");
 //Uncomment this section to check database connection
 if ($db) {
 	echo "Successful Connect to DB<br/>";
@@ -9,15 +8,10 @@ if ($db) {
 }
 if (isset($_REQUEST["eid"])) {
     $eid = $_REQUEST["eid"];
-    $query = mysql_query("select * from orders where id='$eid'");
-    $row = mysql_fetch_array($query);
+    $query =("SELECT * from orders where OrderID='$eid'");
+    $row = ($query);
 }
 
-if (isset($_REQUEST["submit"])) {
-    $TrackingStatus = $_REQUEST["TrackingStatus"];
-    mysql_query("update TrackingStatus = '$TrackingStatus' where id = '$eid'");
-    header('location:OTUpdateOrders.php');
-}
 ?>
 
 
@@ -28,35 +22,11 @@ if (isset($_REQUEST["submit"])) {
 <td>Tracking Status:</td>
 <td>
 <select name = "TrackingStatus">
-<option value = "">Select Any One</option>
-<option value = "Invoice issued"
-
-<?php if ($row["TrackingStatus"] == 'Invoice issued') {
-    echo "selected";
-} ?>
-
->Invoice issued</option>
-<option value="Order confirmed"
-
-<?php if ($row["TrackingStatus"] == 'Order confirmed') {
-    echo "selected";
-} ?>
-
->Order confirmed</option>
-<option value="Event preparing"
-
-<?php if ($row["TrackingStatus"] == 'Event preparing') {
-    echo "selected";
-} ?>
-
->Event preparing</option>
-<option value="Event dismantled"
-
-<?php if ($row["TrackingStatus"] == 'Event dismantled') {
-    echo "selected";
-} ?>
-
->Event dismantled</option>
+	<option value = "">Select Any One</option>
+	<option value = "Invoice issued">Invoice issued</option>
+	<option value = "Order confirmed">Order confirmed</option>
+	<option value = "Event preparing">Event preparing</option>
+	<option value = "Event dismantled">Event dismantled</option>
 </select>
 </td>
 </tr>
@@ -65,3 +35,16 @@ if (isset($_REQUEST["submit"])) {
 </tr>
 </table>
 </form>
+<?php
+	if(isset($_POST['submit'] )){
+		echo "abc";
+		$TrackingStatus = mysqli_real_escape_string($db, $_POST['TrackingStatus']);
+		$sql = " Update orders SET TrackingStatus = '$TrackingStatus' WHERE OrderID = '$eid'";
+		if (mysqli_query($db, $sql)){
+            echo"Successfully insert<br/>";
+			header('location:OTUpdateOrders.php');
+        }else{
+            echo"Failed to insert</br>";
+         }
+	}
+?>
