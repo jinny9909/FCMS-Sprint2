@@ -11,7 +11,6 @@ if (!$conn) {
     echo "Failed to connect MT table";
 }
 
-
 if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     function validate($data)
