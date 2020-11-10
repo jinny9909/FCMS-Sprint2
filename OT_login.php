@@ -30,7 +30,7 @@
 			</div>
 			<div class="card-body">
                 
-				<form methog="POST" action="include/OTlogin.php">
+				<form methog="POST" action="OT_login.php">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -44,24 +44,55 @@
 						</div>
 						<input type="password" class="form-control" placeholder="password" name="password">
 					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn" name="login">
 					</div>
 				</form>
 			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
+
+<?php
+
+$hostname_dbconnection = "localhost"; 
+$database_dbconnection = "fcms";
+$username_dbconnection = "root";
+$password_dbconnection = "";
+
+$conn = mysqli_connect($hostname_dbconnection, $username_dbconnection, $password_dbconnection, $database_dbconnection);
+
+mysqli_select_db($conn, $database_dbconnection) or die (mysqli_error($conn)); 
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') 
+{
+	if (isset($_POST['login'])) 
+	{
+		if(isset($_POST['username']) && isset($_POST['password'])) 
+		{
+			$username = strip_tags($_POST['username']);
+			$password = strip_tags($_POST['password']);
+
+			$username = mysqli_real_escape_string($conn, $username);
+			$password = mysqli_real_escape_string($conn, $password);
+
+            $checkUser = mysqli_query($conn, "SELECT user FROM `OT` WHERE user = '$username' AND pass = '$password' ") or exit(mysqli_error($conn));
+            
+            if(mysqli_num_rows($checkUser) >= 1)
+            {
+                header("Location: OThomePage.php");
+            }
+            else 
+            {
+            ?>
+                <script>alert('Wrong Password. Please Try Again.');</script>
+            <?php
+            }
+		}
+	}
+}
+?>
+
+
 </body>
 </html>
