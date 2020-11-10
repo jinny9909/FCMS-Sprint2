@@ -2,7 +2,7 @@
 <html>
 	<head>
 	
-		<title>[OT] Update Order Page</title> 
+		<title>Client History</title> 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="styles/OTUpdateOrder.css">
@@ -23,29 +23,28 @@
 
 	<body>
 		<?php
-			include 'include/OTNavBar.php';
+			include 'include/ClientsNavBar.php';
 		?>
-		<div class="container">
-			<form method="post">
-				<div class="row clearfix">
+		<div class="container inner-ontainer tab_box">
+			<div class="row clearfix">
 					<div class="col-md-12 table-responsive">
 						<table class="table table-bordered table-hover table-sortable" id="tab_logic">
 							<thead class="table_heading">
 								<tr >
 									<th class="text-center">
-										Order Date
+										Order ID
 									</th>
 									<th class="text-center">
-										 Order ID
+										 Order Date
 									</th>
 									<th class="text-center">
-										Package Option
+										Package ID
 									</th>
 									<th class="text-center" >
-										Order Status
+										Total Price
 									</th>
 									<th class="text-center" >
-										Edit
+										Number of Diner
 									</th>
 								</tr>
 							</thead>
@@ -58,18 +57,18 @@
 							} else {
 								die("fail");
 							}
-							$sql = "SELECT OrderDate, OrderID, PackageID, TrackingStatus from orders";
+							$sql = "SELECT order_ID, order_date, package_ID, total_price, num_diner from client_history";
 							$result=$db-> query($sql);
 							
 							if ($result-> num_rows >0){
 								while ($row = $result-> fetch_assoc()){
 									echo 
 									"<tr>
-										<td>".$row["OrderDate"]."</td>
-										<td>".$row["OrderID"]."</td>
-										<td>".$row["PackageID"]."</td>
-										<td>".$row["TrackingStatus"]."</td>
-										<td><button>Edit</button></td>
+										<td>".$row["order_ID"]."</td>
+										<td>".$row["order_date"]."</td>
+										<td>".$row["package_ID"]."</td>
+										<td>".$row["total_price"]."</td>
+										<td>".$row["num_diner"]."</td>
 									</tr>";
 								}
 							}
@@ -78,10 +77,9 @@
 							}
 							$db-> close();
 							?>
-						</table>
-					</div>
+					</table>
 				</div>
-			</form>
+			</div>
 		</div>
 	</body>
 </html>

@@ -63,21 +63,25 @@
 							
 							if ($result-> num_rows >0){
 								while ($row = $result-> fetch_assoc()){
-									echo 
-									"<tr>
-										<td>".$row["OrderDate"]."</td>
-										<td>".$row["OrderID"]."</td>
-										<td>".$row["PackageID"]."</td>
-										<td>".$row["TrackingStatus"]."</td>
-										<td><button>Edit</button></td>
-									</tr>";
+							?>		
+							<tr>
+								<td><?php echo $row['OrderDate']; ?></td>
+								<td><?php echo $row['OrderID']; ?></td>
+								<td><?php echo $row['PackageID']; ?></td>
+								<td><?php echo $row['TrackingStatus']; ?></td>
+								<td><a href="edit.php?eid=<?php echo $row["OrderID"] ?>">Edit</a></td>
+							</tr>
+							<?php
+								
 								}
+								
 							}
 							else{
 								echo "0 result";
 							}
 							$db-> close();
 							?>
+
 						</table>
 					</div>
 				</div>
