@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/client_catering.css">
     <link rel="stylesheet" href="stylesheet/footer.css">
     <?php
-    include 'include/NavBarStyle.php';
+      include 'include/NavBarStyle.php';
     ?>
 </head>
 

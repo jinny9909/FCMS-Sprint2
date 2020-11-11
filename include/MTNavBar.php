@@ -10,8 +10,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MT_listofAccPage.php">OT</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MT_OTAccCreation.php">Create Account</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MT_listofAccPage.php">Account List</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MT_OTAccCreation.php">Account Create</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MTlogout.php">Log Out</a></li>
             </ul>
         </div>

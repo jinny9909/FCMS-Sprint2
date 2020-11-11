@@ -6,19 +6,22 @@
     <?php
         include 'include/NavBarStyle.php';
     ?>
-    <link rel="stylesheet" type="text/css" href="styles/All_Login.css">
+    <link rel="stylesheet" type="text/css" href="styles/AllLogin.css">
 </head>
 
 <?php
+    // error message
+    $error = false;
+
+    // database connection
     include 'backend/DatabaseConnect.php'; // global variables for connection
-    $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+    $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE); // initialize database connection object
     
+    // if the login button is pushed, execute the following
     if(isset($_POST['login'])){
-        $username =$_POST['username'];
-        $password = $_POST['password'];
-        echo $username;
-        echo $password;
-        $sql = 'SELECT * FROM clients WHERE username = "'.$username.'" AND clientpassword = "'.$password.'"';
+        $username = $_POST['username']; // get username from field
+        $password = $_POST['password'];  // get password from field
+        $sql = 'SELECT * FROM clients WHERE username = "'.$username.'" AND clientpassword = "'.$password.'" AND status = 1';
         $result = $db->query($sql);
 
         if($result->num_rows > 0){
@@ -28,10 +31,10 @@
             echo $row["ClientPassword"];
             session_start();
             $_SESSION['clientID'] = $row["ClientID"];
-            //header('ClientHome.php');
+            header('Location:ClientHome.php');
         }
         else{
-            echo "<p>You Have Entered Incorrect Password!</p>";
+            $error = true;
         }
     }
     $db->close();
@@ -41,7 +44,7 @@
 	<?php
         include 'include/ClientsNavBar.php';
 	?>
-	<div class="signup-form" style="margin-top: 110px;">
+	<div class="signup-form" id="login" style="margin-top: 110px;">
         <form method="post" action="Client_login.php">
             <div class="card" style="width: 330px">
                 <div class="card-body">
@@ -63,8 +66,18 @@
             <div class="form-group">
                 <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
             </div>
-            <div class="text-center">Don't have an account? <a href="ClientAccCreation.php">Register here</a>.</div>
+            <div class="text-center"> <a href=#>Forgotten password?</a></div>
         </form>
+        <?php
+            if ($error) {
+                echo "<div class='alert alert-danger'>You have entered an incorrect password, or your account might have been suspended!</div>";
+            }  
+        ?>
+        <div class="col-block text-center">
+            <a href='ClientAccCreation.php'>
+                <button class="btn btn-secondary btn-lg">Create New Account</button>
+            </a>
+        </div>
 	</div>
 </body>
 
