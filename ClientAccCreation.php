@@ -34,7 +34,7 @@
         <form method="post">
             <div class="card" style="width: 330px">
                 <div class="card-body">
-                    <h3 style="margin-bottom:20px;">Create Client Account</h3>
+                    <h3 class="mb-4">Create Client Account</h3>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -70,6 +70,17 @@
                         </span>
                         <input type="tel" class="form-control" name="phone_number" placeholder="Phone number" required="required">
                     </div>
+
+                     <div class="card mt-4 mb-0" >
+                            <div id="upload" class="card-header py-0">
+                                <h6 >Upload Profile Picture</h6>
+                            </div>
+                            <div class="card-body py-0 mt-2">
+                                <div class="form-group">
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
 

@@ -179,7 +179,7 @@
                     <div class="modal-body">
                         
                     <div class="form-group">
-                        <label>Profile Picture</label>
+                        <p>Update Profile Picture</p>
                         <input type="file" name="fileToUpload" id="fileToUpload">
                     </div>
                         
