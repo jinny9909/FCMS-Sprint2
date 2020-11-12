@@ -58,19 +58,21 @@ primary key (ClientID)
 );
 
 /*Inserting Data into Account*/
-insert into Clients (ClientID, Status, MemberID, Username, Email, ClientPassword, PhoneNumber)
+insert into Clients (ClientID, Status, MemberID, Username, Email, Password, PhoneNumber)
 values ("CL00000001", True, "CM00000001", "user1", "user1@gmail.com", "abc123", 1234567891);
-insert into Clients (ClientID, Status, MemberID, Username, Email, ClientPassword, PhoneNumber)
+insert into Clients (ClientID, Status, MemberID, Username, Email, Password, PhoneNumber)
 values ("CL00000002", True, "CM00000002", "user2", "user2@gmail.com", "abc123", 1234567892);
-insert into Clients (ClientID, Status, MemberID, Username, Email, ClientPassword, PhoneNumber)
+insert into Clients (ClientID, Status, MemberID, Username, Email, Password, PhoneNumber)
 values ("CL00000003", True, "CM00000003", "user3", "user3@gmail.com", "abc123", 1234567893);
+
+SELECT MemberID, Username, PhoneNumber, Email, Password FROM clients;
 
 /* get values */
 /*
 SELECT * FROM Clients;
 */
 
-SELECT * FROM clients WHERE username = "user1" AND clientpassword = "abc123";
+SELECT * FROM clients WHERE username = "user1" AND client = "abc123";
 
 /* update test */
 /*

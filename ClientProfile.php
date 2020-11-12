@@ -31,24 +31,57 @@
 
 <body>
     <?php
-        include 'include/ClientsNavBar.php';
+      include 'include/ClientsNavBar.php';
 
-        $usrName = ""; 
-        $phNum = ""; 
-        $emlAdd = ""; 
-        $pswrd = "";
-        $clientID = "CL00000004";
-        // connect to the database
-        include 'backend/DatabaseConnect.php'; // global variables for connection
-        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-        $selectSQL = "SELECT MemberID, Username, PhoneNumber, Email, Password FROM clients WHERE ClientID='$clientID'";
-        $result = $db->query($selectSQL);
+      $username = "";
+      $phoneNumber = "";
+      $email = "";
+      $password = "";
 
-        if($result->num_rows>0){
-         while($row = $result->fetch_assoc()){
+      $clientID = "CL00000003";
+      // connect to the database
+      include 'backend/DatabaseConnect.php'; // global variables for connection
+      $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+      $selectSQL = "SELECT MemberID, Username, PhoneNumber, Email, Password FROM clients WHERE ClientID='$clientID'";
+      $result = $db->query($selectSQL);
+
+      if($result->num_rows>0){
+        $row = $result->fetch_assoc();
+        $username = $row['Username'];
+        $memberID = $row['MemberID'];
+        $phoneNumber = $row['PhoneNumber'];
+        $email = $row['Email'];
+        $password = $row['Password'];
+      }
+
+      // Sanitise the input
+      function sanitise_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+
+      // Make sure user clicked the submit button
+      if(isset($_POST['updateProfile'])){
+        $username = mysqli_real_escape_string($db, sanitise_input($_POST['userName']));
+        $phoneNum = mysqli_real_escape_string($db, sanitise_input($_POST['phoneNum']));
+        $emailAddrs = mysqli_real_escape_string($db, sanitise_input($_POST['email']));
+        $password = mysqli_real_escape_string($db, sanitise_input($_POST['password']));
+
+        $sql = "Update clients SET Username='$username', PhoneNumber='$phoneNum', Email='$emailAddrs', Password='$password' WHERE ClientID='CL00000003'";
+
+            // execute query
+        if (mysqli_query($db, $sql)){
+          //echo"Successfully insert<br/>";
+        }
+        else{
+          //echo"Failed to insert</br>";
+        }
+      }
+
+      $db->close();
     ?>
-
-
 
     <!-- Edit Profile Information Modal -->
     <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -62,26 +95,24 @@
             </button>
           </div>
 
-          <form method="post">
+          <form action="ClientProfile.php" method="post">
               <div class="modal-body">
-
-                      <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" name="userName" id="userName" value="<?php echo $row['Username']; ?>">
-                      </div>
-                      <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" name="phoneNum" id="phoneNum" value="<?php echo $row['PhoneNumber']; ?>">
-                      </div>
-                      <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" class="form-control" name="email" id="email" value="<?php echo $row['Email']; ?>">
-                      </div>
-                      <div class="form-group">
-                        <label>Password</label>
-                        <input type="text" class="form-control" name="password" id="password" value="<?php echo $row['Password']; ?>">
-                      </div>
-
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" class="form-control" name="userName" id="userName" value="<?php echo $username; ?>">
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" class="form-control" name="phoneNum" id="phoneNum" value="<?php echo $phoneNumber; ?>">
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" class="form-control" name="email" id="email" value="<?php echo $email; ?>">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="text" class="form-control" name="password" id="password" value="<?php echo $password; ?>">
+                </div>
               </div>
               <div class="modal-footer d-flex justify-content-center">
                 <button type="submit" name="updateProfile" class="btn">Update and save changes</button>
@@ -90,32 +121,27 @@
         </div>
       </div>
     </div>
-
-    
-	<div class="container-fluid d-flex justify-content-center">
+	  <div class="container-fluid d-flex justify-content-center">
         <div class=" col-md-10 mt-5 pt-5">
             <div class="row d-flex justify-content-center depth-3"><!--Center the content and put shadow-->
-
             	<div class="col-sm-8 " id="pInfo">
                  	<div class="col mx-auto">
         		        <div class="card-block text-center ">
-                    		<h2 class="font-weight-bold mt-4"><?php echo $row['Username']; ?></h2>
-                    		<p>Membership ID: <?php echo $row['MemberID']; ?></p>
+                    		<h2 class="font-weight-bold mt-4"><?php echo $username; ?></h2>
+                    		<p>Membership ID: <?php echo $memberID; ?></p>
                 		</div>
             		</div>
-
                     <div class="col">
         		        <div class="card">
                     	    <h3 class="title2">Profile Information</h3>
                         	    <div>
                             	    <p class="font-weight-bold mt-3 mb-1">Phone Number:</p>
-                           		    <h6 class="text-muted">+<?php echo $row['PhoneNumber']; ?></h6>
+                           		    <h6 class="text-muted">+<?php echo $phoneNumber; ?></h6>
                         	    </div>
                         	    <div >
                             	    <p class="font-weight-bold mt-3 mb-1">Email Address:</p>
-                           		    <h6 class="text-muted mb-3"><?php echo $row['Email']; ?></h6>
+                           		    <h6 class="text-muted mb-3"><?php echo $email; ?></h6>
                         	    </div>
-
                         </div>
                         <div class="d-flex justify-content-center" id="editButton">
                             <button type="button" class="btn" id="editBtn" data-toggle="modal" data-target="#editProfileModal">Edit Profile</button>
@@ -125,45 +151,5 @@
             </div>
         </div>
 	</div>
-    <?php
-        }
-    }
-    ?>
-
-    <?php
-        //Uncomment this section to check database connection
-		/*if($db){
-			echo"Successful Connect to DB<br/>";
-		}else{
-			die("fail");
-		}*/
-
-        //Sanitise the input
-		function sanitise_input($data) {
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
-			return $data;
-		}
-
-        //Make sure user clicked the submit button
-		if(isset($_POST['updateProfile'])){
-			$username = mysqli_real_escape_string($db, sanitise_input($_POST['userName']));
-			$phoneNum = mysqli_real_escape_string($db, sanitise_input($_POST['phoneNum']));
-			$emailAddrs = mysqli_real_escape_string($db, sanitise_input($_POST['email']));
-            $password = mysqli_real_escape_string($db, sanitise_input($_POST['password']));
-
-			$sql = "Update clients SET Username='$username', PhoneNumber='$phoneNum', Email='$emailAddrs', Password='$password' WHERE ClientID='CL00000004'";
-
-        	// execute query
-			if (mysqli_query($db, $sql)){
-				//echo"Successfully insert<br/>";
-			}else{
-				//echo"Failed to insert</br>";
-			}
-		}
-
-        $db->close();
-    ?>
 </body>
 </html>
