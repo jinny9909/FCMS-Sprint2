@@ -9,3 +9,39 @@ footer a {
 #copyright {
   background-color: grey;
 }
+
+#footercolor {
+  background-color: #5e503f;
+}
+
+.copyright {
+  color: white;
+}
+
+.footertext{
+  color:white;
+}
+.hometext{
+  color: #f2f4f3;
+  size: 2.5rem;
+}
+footer a {
+  color: 5E503F;
+}
+.footermain {
+  background-color: #5e503f;
+}
+
+#copyright {
+  background-color: grey;
+}
+
+#aboutushome {
+  background-color: #a9927d;
+
+}
+.footera {
+  background-color: #5E503F;
+  color: grey;
+  padding-top: 2rem;
+}
