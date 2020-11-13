@@ -57,6 +57,8 @@ insert into Clients (ClientID, Status, MemberID, Username, Email, Password, Phon
 ("CL00000003", True, "CM00000003", "user3", "user3@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\user3.jpg'),
 ("CL00000004", True, "CM00000004", "user4", "user4@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\user4.jpg');
 
+SELECT * FROM clients WHERE username = "user1" AND clientpassword = "abc123" AND status = 1;
+
 /* get values */
 /*
 SELECT MemberID, Username, PhoneNumber, Email, Password FROM clients;

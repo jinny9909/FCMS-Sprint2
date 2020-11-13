@@ -21,7 +21,7 @@
     if(isset($_POST['login'])){
         $username = $_POST['username']; // get username from field
         $password = $_POST['password'];  // get password from field
-        $sql = 'SELECT * FROM clients WHERE username = "'.$username.'" AND clientpassword = "'.$password.'" AND status = 1';
+        $sql = 'SELECT * FROM clients WHERE username = "'.$username.'" AND password = "'.$password.'" AND status = 1';
         $result = $db->query($sql);
 
         if($result->num_rows > 0){
