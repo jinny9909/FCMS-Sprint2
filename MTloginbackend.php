@@ -11,7 +11,7 @@ if (!$conn) {
     echo "Failed to connect MT table";
 }
 
-if (isset($_POST['uname']) && isset($_POST['password'])) {
+if (isset($_POST['username']) && isset($_POST['password'])) {
 
     function validate($data)
     {
@@ -21,7 +21,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         return $data;
     }
 
-    $uname = validate($_POST['uname']);
+    $uname = validate($_POST['username']);
     $pass = validate($_POST['password']);
 
     if (empty($uname)) {
@@ -52,7 +52,5 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             exit();
         }
     }
-} else {
-    header("Location: Mtlogin.php");
-    exit();
-}
+
+}?>

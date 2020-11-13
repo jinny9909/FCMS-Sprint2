@@ -9,6 +9,8 @@
     <title>MT Login</title>
     <?php
         include 'include/NavBarStyle.php';
+       include 'MTloginbackend.php';
+        
     ?>
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="styles/AllLogin.css">
@@ -17,7 +19,10 @@
 <body>
     <?php
         include 'include/MTNavBar.php';
-	?>
+        
+        
+    ?>
+  
 	<div class="signup-form" style="margin-top: 110px;">
         <form method="post" action="MTlogin.php">
             <div class="card" style="width: 330px">
