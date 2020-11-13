@@ -11,7 +11,7 @@
         include 'include/NavBarStyle.php';
     ?>
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="styles/All_Login.css">
+    <link rel="stylesheet" type="text/css" href="styles/AllLogin.css">
 </head>
 
 <body>
