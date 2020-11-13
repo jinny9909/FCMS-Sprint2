@@ -9,6 +9,13 @@
 
 		<link rel="stylesheet" href="styles/OTFoodAndBeverages.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+	#content{
+		background-color:#A9927D;
+	}
+	
+	</style>
+
 	</head>
 	
 	<?php
@@ -18,14 +25,16 @@
 	<?php
 		include 'include/OTNavBar.php';
 		?>
-	<div class="container" style="margin-top: 100px;">
-		<div class="row col-lg-12 mx-auto">
+	<div class="container" id="content" style="margin-top: 120px;">
+		<div class="row col-lg-12 mx-auto" style="padding-bottom:20px;">
+
+		<h2 class="mx-auto" style="margin:20px;">Food and Beverage List</h2>
 
 		<div class="table-responsive">
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm" style="background-color:#F2F4F3;">
           <thead>
             <tr>
-              <th>#</th>
+              <th></th>
               <th>Name</th>
               <th>Action</th>
             </tr>
@@ -69,7 +78,7 @@
             </div>
             <input type="hidden" name="edit_food" value="1">
             <div class="col-12">
-              <button type="button" class="btn btn-primary edit-food-btn">Update Food</button>
+              <button type="button" class="btn btn-info edit-food-btn" style="background-color:#A9927D; border-color:#A9927D;">Update Food</button>
             </div>
           </div>
 
@@ -144,7 +153,7 @@ $(document).ready(function(){
 					foodHTML += '<tr>'+
 									'<td></td>'+
 									'<td>'+ value.FoodName +'</td>'+
-									'<td><a class="btn btn-sm btn-info edit-food"><span style="display:none;">'+JSON.stringify(value)+'</span><i class="fas fa-pencil-alt"></i></a></td>'+
+									'<td><a class="btn btn-sm btn-info edit-food" style="background-color:#A9927D; border-color:#A9927D;"><span style="display:none; width: 200px;">'+JSON.stringify(value)+'</span>Edit</a></td>'+
 								'</tr>';
 				});
 
