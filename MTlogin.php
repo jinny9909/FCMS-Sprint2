@@ -44,6 +44,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
+                <div class="text-center"> <a href="MTForgotPass.php">Forgotten password ? </a></div>
             </div>
         </form>
 	</div>
