@@ -37,18 +37,34 @@ if (isset($codes) && isset($username)) {
 <html>
 
 <head>
-  <title>Send Email</title>
+  <title>OT Update New Password</title>
+  <link rel="stylesheet" type="text/css" href="styles/AllLogin.css">
+  <?php
+  include 'include/NavBarStyle.php';
+  ?>
 </head>
 
 <body>
-  <h3>Change your password</h3>
-  <form action="" method="post">
-    <label>password</label><br>
-    <input type="text" name="password" placeholder="password"><br>
-    <label>new password</label><br>
-    <input type="text" name="confirmPassword" placeholder="new password"><br>
-    <input type="submit" name="submit">
-  </form>
+  <div class="signup-form" id="login" style="margin-top: 110px;">
+    <div class="card" style="width: 330px">
+      <h3>Change your password</h3>
+      <form action="" method="post">
+        <p>Welcome back <?php echo $row['user_name'] ?>!</p>
+        <div class="form-group">
+          <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input type="text" name="password" placeholder="New Password"><br>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input type="text" name="confirmPassword" placeholder="Confirm New Password"><br>
+          </div>
+        </div>
+        <input type="submit" name="submit" class="btn btn-primary btn-block btn-sm">
+      </form>
+    </div>
+  </div>
 </body>
-
 </html>
