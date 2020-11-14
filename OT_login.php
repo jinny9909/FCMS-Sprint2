@@ -10,34 +10,7 @@
 </head>
 
 <?php
-    /*// error message
-    $error = false;
-
-    // database connection
-    include 'backend/DatabaseConnect.php'; // global variables for connection
-    $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE); // initialize database connection object
-    
-    // if the login button is pushed, execute the following
-    if(isset($_POST['login'])){
-        $username = $_POST['username']; // get username from field
-        $password = $_POST['password'];  // get password from field
-        $sql = 'SELECT * FROM OperationTeam WHERE username = "'.$username.'" AND clientpassword = "'.$password.'" AND status = 1';
-        $result = $db->query($sql);
-
-        if($result->num_rows > 0){
-            $row = $result->fetch_assoc();
-
-            echo $row["Username"];
-            echo $row["Email"];
-            session_start();
-            $_SESSION['username'] = $row["Username"];
-            header('Location:OThomePage.php');
-        }
-        else{
-            $error = true;
-        }
-    }
-    $db->close();*/
+   
 ?>
 
 <?php
@@ -63,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 			$username = mysqli_real_escape_string($conn, $username);
 			$password = mysqli_real_escape_string($conn, $password);
 
-            $checkUser = mysqli_query($conn, "SELECT username FROM `ot` WHERE username = '$username' AND pass = '$password' ") or exit(mysqli_error($conn));
+            $checkUser = mysqli_query($conn, "SELECT Username FROM `operationteam` WHERE Username = '$username' AND password = '$password' ") or exit(mysqli_error($conn));
             
             if(mysqli_num_rows($checkUser) >= 1)
             {
