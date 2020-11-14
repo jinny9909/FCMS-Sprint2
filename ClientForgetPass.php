@@ -50,19 +50,38 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-    <title>Page Title</title>
+    <title>Client Forget Password</title>
+    <?php
+    include 'include/NavBarStyle.php';
+    ?>
+    <link rel="stylesheet" type="text/css" href="styles/AllLogin.css">
 </head>
 
 <body>
-    <h3>Reset Password </h3>
-    <form action="" method="post">
-        <label>username</label>
-        <input type="text" name="Username" placeholder="username">
-        <label>email</label>
-        <input type="text" name="Email" placeholder="email">
-        <input type="submit" name="submit">
+    <div class="signup-form" id="login" style="margin-top: 110px;">
+        <div class="card" style="width: 330px">
+            <div class="card-body">
+                <h3 style="margin-bottom:20px;">Client Forget Password</h3>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" name="Username" placeholder="username" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="text" name="Email" placeholder="email" class="form-control">
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" class="btn btn-primary btn-block btn-lg">
 
-    </form>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 
 </html>
