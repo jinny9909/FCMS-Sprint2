@@ -66,7 +66,7 @@
             <div class="form-group">
                 <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
             </div>
-            <div class="text-center"> <a href="ClientForgetPass.php">Forgotten password ? Click to reset Password</a></div>
+            <div class="text-center"> <a href="ClientForgetPass.php">Forgotten password ? </a></div>
         </form>
         <?php
             if ($error) {
