@@ -1,7 +1,7 @@
 <?php
 require_once 'MTdb.php';
 $codes = $_GET['code'];
-$username = $_GET['user_name'];
+$username = $_GET['username'];
 
 //check link
 if (isset($codes) && isset($username)) {

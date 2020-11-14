@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     //check is there username in database
     if ($rows != 0) {
         while ($row = mysqli_fetch_assoc($db)) {
-            $db_email = $row['Email'];
+            $db_email = $row['email'];
         }
 
         //check input email similiar with email in database
