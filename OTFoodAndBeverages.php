@@ -9,51 +9,36 @@
 
 		<link rel="stylesheet" href="styles/OTFoodAndBeverages.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<style>
-	#content{
-		background-color:#A9927D;
-	}
-	
-	</style>
-
 	</head>
 	
 	<?php
         include 'include/NavBarStyle.php';
     ?>
-	<body>
+	<body style="background-color:#A9927D;">
 	<?php
 		include 'include/OTNavBar.php';
 		?>
-	<div class="container" id="content" style="margin-top: 120px;">
-		<div class="row col-lg-12 mx-auto" style="padding-bottom:20px;">
 
-		<h2 class="mx-auto" style="margin:20px;">Food and Beverage List</h2>
-
-		<div class="table-responsive">
-        <table class="table table-striped table-sm" style="background-color:#F2F4F3;">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="food_list">
-            <!-- <tr>
-              <td>food1</td>
-              <td>food2</td>
-              <td>food3</td>
-              <td>food4</td>
-              <td>food5/td>
-              <td>food6</td>
-              <td><a class="btn btn-sm btn-info"></a><a class="btn btn-sm btn-danger">Delete</a></td>
-            </tr> -->
-          </tbody>
-        </table>
-      </div>
-    </main>
-  </div>
+<div class="container">
+    <div class="jumbotron" style="margin-top: 100px; padding:30px; background-color:#F2F4F3;">
+        <div class="card">
+            <h5 class="card-header">List Of Clients' Transactions</h5>
+            <div class="card-body">
+                <br />
+                <table class="table">
+				<thead>
+					<tr>
+					<th></th>
+					<th>Name</th>
+					<th>Action</th>
+					</tr>
+				</thead>
+					<tbody id="food_list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Edit food Modal -->
@@ -153,7 +138,7 @@ $(document).ready(function(){
 					foodHTML += '<tr>'+
 									'<td></td>'+
 									'<td>'+ value.FoodName +'</td>'+
-									'<td><a class="btn btn-sm btn-info edit-food" style="background-color:#A9927D; border-color:#A9927D;"><span style="display:none; width: 200px;">'+JSON.stringify(value)+'</span>Edit</a></td>'+
+									'<td><a class="btn btn-sm btn-info edit-food" style="background-color:#A9927D; border-color:#A9927D;"><span style="display:none; width: 200px;">'+JSON.stringify(value)+'</span>Edit Name</a></td>'+
 								'</tr>';
 				});
 
