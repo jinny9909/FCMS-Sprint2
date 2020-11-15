@@ -82,13 +82,12 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-        </div>
-        <!-- /.container -->
-    </footer>
+    <?php
+	include 'ClientFooter.php'
+	?>
+   
+   <div class="container-fluid text-center bg-secondary">
+      <h4 class="copyright text-white">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
+    </div>
 </body>
 </html>

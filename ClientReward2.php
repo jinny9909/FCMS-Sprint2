@@ -1,19 +1,20 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="FCMS">
-    <meta name="author" content="Ooi Kuan Hao"/>
-    <meta name="description" content="Client Reward 2 Page"/>
-    
+    <meta name="author" content="Ooi Kuan Hao" />
+    <meta name="description" content="Client Reward 2 Page" />
+
     <!-- navbar css -->
     <?php
-        include 'include/NavBarStyle.php';
+    include 'include/NavBarStyle.php';
     ?>
-    
+
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">-->
     <title>Client Create Account</title>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
@@ -27,9 +28,9 @@
 
 <body>
     <?php
-        include 'include/ClientsNavBar.php';
+    include 'include/ClientsNavBar.php';
     ?>
-    
+
     <div class="signup-form" style="margin-top: 110px;">
         <form method="post">
             <div class="card" style="width: 330px">
@@ -50,7 +51,30 @@
                             <input type="text" class="form-control" name="address3" placeholder="Address3" required="required">
                         </div>
                     </div>
-            </div>
+                </div>
+                <footer class="bg-secondary text-white fixed-bottom" id="footermain">
+                    <div id="footerimage">
+                        <div class="container py-12">
+                            <div class="row text-center">
+                                <div class="col-lg-12 text-white">
+                                    <h4 class="text-white">About Us</h4>
+                                    <p class="text-white"> 082-8865234</p>
+                                    <p class="text-white">enquiry@foodedge.com</p>
+                                    <p class="text-white">Jalan Song</p>
+                                    <p class="text-white">Kuching, Sarawak, Malaysia</p>
+                                </div>
+                            </div>
+                            <div class="container-fluid text-center bg-secondary fixed-bottom">
+                                <h4 class="copyright text-white">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </footer>
 
 </body>
+
 </html>

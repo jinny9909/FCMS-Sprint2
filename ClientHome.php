@@ -185,13 +185,13 @@
 	include 'ClientFooter.php'
 	
 	?>
-    <div class="container-fluid text-center bg-secondary">
+   
+   <div class="container-fluid text-center bg-secondary fixed-bottom">
       <h4 class="copyright">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
     </div>
-    <!-- Load Facebook SDK for JavaScript -->
 
 
-  </footer>
+ 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
