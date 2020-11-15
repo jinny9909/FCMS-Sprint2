@@ -88,5 +88,6 @@
 			</form>
 		</div>
 	</body>
+	<?php include 'include/OTfooter.php'; ?>
 </html>
 	

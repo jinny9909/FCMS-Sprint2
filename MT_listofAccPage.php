@@ -184,11 +184,9 @@
         </div>
         <input type="submit" name="submit" value="Submit" class="btn" id="submit">
     </form>
-    <footer>
-        <div class="container-fluid text-center  text-white" id="copyright">
-            &copy; 2020. All right are Reserved by FoodEdge Gourmate
-        </div>
-    </footer>
+    <?php
+        include 'include/MTfooter.php'; 
+    ?>
 
 </body>
 

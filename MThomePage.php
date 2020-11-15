@@ -76,6 +76,9 @@ html{
             </div>
         </div>
     </section>
+    <?php
+        include 'include/MTfooter.php'; 
+    ?>
 
 </body>
 

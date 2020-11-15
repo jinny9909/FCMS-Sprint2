@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -7,31 +7,31 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>OT Homepage</title>
+    <title>OT Homepage</title>
 
-  <!-- Custom styles for this template -->
-  <link href="styles/MT_homePage.css" rel="stylesheet">
-  <link href="styles/all.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="styles/MT_homePage.css" rel="stylesheet">
+    <link href="styles/all.min.css" rel="stylesheet">
 
-  <?php
-        include 'include/NavBarStyle.php';
-  ?>
+    <?php
+    include 'include/NavBarStyle.php';
+    ?>
 
-<style>
-html{
-    min-height:100%;
-}
-</style>
+    <style>
+        html {
+            min-height: 100%;
+        }
+    </style>
 </head>
 
 <body style="background-image: url(images/3.jpg);background-position: center;padding-top: 50px; background-size:cover;">
 
     <?php
-        include 'include/OTNavBar.php';
-        include 'include/StringPath.php';
+    include 'include/OTNavBar.php';
+    include 'include/StringPath.php';
     ?>
 
     <section id="function">
@@ -76,7 +76,7 @@ html{
             </div>
         </div>
     </section>
-
+    <?php include 'include/OTfooter.php'; ?>
 </body>
 
 </html>

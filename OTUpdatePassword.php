@@ -66,5 +66,6 @@ if (isset($codes) && isset($username)) {
       </form>
     </div>
   </div>
+  <?php include 'include/OTfooter.php'; ?>
 </body>
 </html>

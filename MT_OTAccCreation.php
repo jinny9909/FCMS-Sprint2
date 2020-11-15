@@ -87,4 +87,7 @@
 			$db->close();
 		?>
 	</body>
+	<?php
+        include 'include/MTfooter.php'; 
+    ?>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -7,39 +7,39 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Statistics</title>
+    <title>Statistics</title>
 
-  <!-- Custom styles for this template -->
-  <link href="styles/all.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="styles/all.min.css" rel="stylesheet">
 
-  <!--Chart Java-->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/Chart.min.js"></script>
+    <!--Chart Java-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Chart.min.js"></script>
 
-  <!-- Bootstrap CSS-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<!-- google font -->
-<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 
-<link href="styles/navbar.css" rel="stylesheet">
+    <link href="styles/navbar.css" rel="stylesheet">
 
-<!--Font Awesome-->
-<link rel="stylesheet" href="styles/all.min.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="styles/all.min.css">
 
 </head>
 
 <body style="background-color: #a9927d;">
 
     <?php
-        include 'include/MTNavBar.php';
-        include 'include/StringPath.php';
+    include 'include/MTNavBar.php';
+    include 'include/StringPath.php';
     ?>
     <!--<div class="container">
     <div class="jumbotron" style="margin-top: 100px; padding:30px;">
@@ -56,7 +56,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            /*include 'backend/DatabaseConnect.php'; // global variables for connection
+                        /*include 'backend/DatabaseConnect.php'; // global variables for connection
                             $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
                             // fetches all data from the tables
@@ -92,56 +92,55 @@
                 <canvas id="graphCanvas" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
             </div>
         </div>
-        
+
     </div>
 
     </div>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             showGraph();
         });
 
 
-        function showGraph()
-        {
+        function showGraph() {
             {
                 $.post("include/data.php",
-                function (data)
-                {
-                    console.log(data);
-                     var name = [];
-                    var marks = [];
+                    function(data) {
+                        console.log(data);
+                        var name = [];
+                        var marks = [];
 
-                    for (var i in data) {
-                        name.push(data[i].OrderDate);
-                        marks.push(data[i].Price);
-                    }
+                        for (var i in data) {
+                            name.push(data[i].OrderDate);
+                            marks.push(data[i].Price);
+                        }
 
-                    var chartdata = {
-                        labels: name,
-                        datasets: [
-                            {
+                        var chartdata = {
+                            labels: name,
+                            datasets: [{
                                 label: 'Sales',
                                 backgroundColor: '#5e503f',
                                 borderColor: '#5e503f',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: marks
-                            }
-                        ]
-                    };
+                            }]
+                        };
 
-                    var graphTarget = $("#graphCanvas");
+                        var graphTarget = $("#graphCanvas");
 
-                    var barGraph = new Chart(graphTarget, {
-                        type: 'bar',
-                        data: chartdata
+                        var barGraph = new Chart(graphTarget, {
+                            type: 'bar',
+                            data: chartdata
+                        });
                     });
-                });
             }
         }
-        </script>
+    </script>
+    <?php
+    include 'include/MTfooter.php';
+    ?>
 </body>
 
 </html>

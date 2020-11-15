@@ -82,6 +82,7 @@ include 'include/NavBarStyle.php';
             </div>
         </div>
     </div>
+    <?php include 'include/OTfooter.php'; ?>
 </body>
 
 

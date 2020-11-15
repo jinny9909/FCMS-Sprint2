@@ -72,6 +72,7 @@
     </div>
   </div>
 </div>
+<?php include 'include/OTfooter.php'; ?>
 		  <?php
 				/*include "backend/DatabaseConnect.php";
 

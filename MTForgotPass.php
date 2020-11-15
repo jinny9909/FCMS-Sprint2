@@ -81,6 +81,9 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+    <?php
+        include 'include/MTfooter.php'; 
+    ?>
 </body>
 
 </html>
