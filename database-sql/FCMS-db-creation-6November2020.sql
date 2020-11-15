@@ -52,18 +52,18 @@ MemberID varchar(10),
 Status bool,
 Username varchar(20),
 Email varchar(255),
-ClientPassword varchar(255),
+ImagePath varchar(255),
+Password varchar(255),
 PhoneNumber int unsigned,
 primary key (ClientID)
 );
 
 /*Inserting Data into Account*/
-insert into Clients (ClientID, Status, MemberID, Username, Email, ClientPassword, PhoneNumber)
-values ("CL00000001", True, "CM00000001", "user1", "user1@gmail.com", "abc123", 1234567891);
-insert into Clients (ClientID, Status, MemberID, Username, Email, ClientPassword, PhoneNumber)
-values ("CL00000002", True, "CM00000002", "user2", "user2@gmail.com", "abc123", 1234567892);
-insert into Clients (ClientID, Status, MemberID, Username, Email, ClientPassword, PhoneNumber)
-values ("CL00000003", True, "CM00000003", "user3", "user3@gmail.com", "abc123", 1234567893);
+insert into Clients (ClientID, Status, MemberID, Username, Email, Password, PhoneNumber, ImagePath) values
+("CL00000001", True, "CM00000001", "user1", "user1@gmail.com", "abc123", 1234567891,'images\\ProfilePicture\\user1.jpg'),
+("CL00000002", True, "CM00000002", "user2", "user2@gmail.com", "abc123", 1234567892,'images\\ProfilePicture\\user2.jpg'),
+("CL00000003", True, "CM00000003", "user3", "user3@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\user3.jpg'),
+("CL00000004", True, "CM00000004", "user4", "user4@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\user4.jpg');
 
 /* get values */
 /*
