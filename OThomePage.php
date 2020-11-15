@@ -39,36 +39,48 @@ session_start();
             <div class="row center justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="MT_OTAccCreation.php">
-                            <div class="upper">
-                                <i class="fas fa-user-circle icon"></i>
-                            </div>
-                            <div class="lower">
-                                <span>Create OT Account</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="outer">
-                        <a href="MT_listofAccPage.php">
+                        <a href="OTCateringPackage1.php">
                             <div class="upper">
                                 <i class="fas fa-list icon"></i>
                             </div>
                             <div class="lower">
-                                <span>Edit OT and Client Account</span>
+                                <span>Edit Menu</span>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="MTsales.php">
+                        <a href="OTFoodAndBeverages.php">
                             <div class="upper">
-                                <i class="fas fa-chart-bar icon"></i>
+                                <i class="far fa-edit icon"></i>
                             </div>
                             <div class="lower">
-                                <span>Sales Statistic</span>
+                                <span>Edit Food and Beverage Name</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="outer">
+                        <a href="OTTransactions.php">
+                            <div class="upper">
+                                <i class="fas fa-file-invoice-dollar icon"></i>
+                            </div>
+                            <div class="lower">
+                                <span>Transaction</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="outer">
+                        <a href="OTUpdateOrders.php">
+                            <div class="upper">
+                                <i class="fas fa-pen-alt icon"></i>
+                            </div>
+                            <div class="lower">
+                                <span>Update Orders</span>
                             </div>
                         </a>
                     </div>

@@ -63,7 +63,7 @@ html{
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="MTsales.php">
+                        <a href="MTStatistics.php">
                             <div class="upper">
                                 <i class="fas fa-chart-bar icon"></i>
                             </div>

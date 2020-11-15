@@ -2,6 +2,10 @@
   height: 750px;
 }
 
+html{
+  min-height: 100%;
+}
+
 .footera {
   background-color: #5E503F;
   color: grey;

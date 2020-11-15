@@ -12,7 +12,8 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MT_listofAccPage.php">Account List</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MT_OTAccCreation.php">Account Create</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MTlogout.php">Log Out</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MTStatistic.php">Statistics</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="MTlogout.php"><i class="fa fa-user" style="margin-right: 7px;"></i>Logout</a></li>
             </ul>
         </div>
         </div>

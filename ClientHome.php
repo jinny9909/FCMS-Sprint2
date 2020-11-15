@@ -53,7 +53,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active" style="height: 750px">
-                <img class="d-block w-100" src="images\FoodCarousel\homeslide1.png" alt="First slide">
+                <img class="d-block w-100" src="images\FoodCarousel\homeslide1.png" style="background-size: cover;" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="txt">Welcome To FoodEdge Gourment</h2>
                     <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>

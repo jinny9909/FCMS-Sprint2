@@ -54,9 +54,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 ?>
 
 <body>
-	<?php
-        include 'include/ClientsNavBar.php';
-	?>
 	<div class="signup-form" id="login" style="margin-top: 110px;">
         <form method="post" action="OT_login.php">
             <div class="card" style="width: 330px">
