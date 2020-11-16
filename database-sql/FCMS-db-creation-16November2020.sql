@@ -55,7 +55,7 @@ insert into Clients (ClientID, Status, Username, Email, Password, PhoneNumber, I
 ("CL00000001", 1, "user1", "user1@gmail.com", "abc123", 1234567891,'images\\ProfilePicture\\user1.jpg', 'aeeegteRrA'),
 ("CL00000002", 1, "user2", "user2@gmail.com", "abc123", 1234567892,'images\\ProfilePicture\\user2.jpg', ''),
 ("CL00000003", 1, "user3", "user3@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\user3.jpg', ''),
-("CL00000004", 1, "user4", "ur@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\Uncle Roger.png', '');
+("CL00000004", 1, "Uncle Roger", "ur@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\Uncle Roger.png', '');
 
 
 /*
