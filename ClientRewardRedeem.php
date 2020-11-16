@@ -20,11 +20,12 @@
 
 <body>
     <?php
+        session_start();
         include 'include/ClientsNavBar.php';
 
-        $itemName = "Mineral Water";
-        $itemID = "0";
-        $memberID = "CM00000004";
+        $itemName = $_SESSION['itemName'];
+        $itemID = $_SESSION['itemID'];
+        $memberID = $_SESSION['membershipID'];
 
 
 		// Create database connection
