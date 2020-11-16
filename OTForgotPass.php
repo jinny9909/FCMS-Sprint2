@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
             $code = substr($code, 0, 10);
 
             // for send token
-            $linktoreset = "http://localhost/FCMSSprint2/FCMS-Sprint2/OTUpdatePassword.php?code=$code&username=$username";
+            $linktoreset = "http://foodedge-asia.rf.gd/OTUpdatePassword.php?code=$code&username=$username";
             $to = $db_email;
             $title = "passwrod reset";
             $emailcontent = "this is automatic email, dont repply. For reset your password please click this link " . $linktoreset;
