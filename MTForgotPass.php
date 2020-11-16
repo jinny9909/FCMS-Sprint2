@@ -35,18 +35,18 @@ if (isset($_POST['submit'])) {
 
             if (update_token($code, $username)) {
                 $error = true;
-                echo $string = "your password have reset";
+                echo $string = "Your password have reset Please check your mail";
             } else {
                 $error = true;
-                echo $string = "please try again";
+                echo $string = "Please try again!";
             }
         } else {
             $error = true;
-            echo $string = "your email didn't register";
+            echo $string = "Your email didn't register in our system";
         }
     } else {
         $error = true;
-        echo $string = "your username didn't register";
+        echo $string = "Your username didn't register in our system";
     }
 }
 

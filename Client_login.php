@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
         echo $row["ClientPassword"];
         session_start();
         $_SESSION['clientID'] = $row["ClientID"];
-        header('Location:ClientHome.php');
+        header('Location:http://foodedge-asia.rf.gd/ClientHome.php');
     } else {
         $error = true;
     }

@@ -1,6 +1,7 @@
 <?php
 include 'OTdb.php';
-
+$error = false;
+$string = "";
 //check submit
 if (isset($_POST['submit'])) {
     $username = $_POST['Username'];
@@ -30,16 +31,21 @@ if (isset($_POST['submit'])) {
             mail($to, $title, $emailcontent, $headers);
 
             //echo $linktoreset;
+            
             if (update_token($code, $username)) {
-                echo "your password have reset";
+                $error = true;
+                echo $string = "Your password have reset! Please check your mail";
             } else {
-                echo "please try again";
+                $error = true;
+                echo $string = "Please try again";
             }
         } else {
-            echo "your email didn't register";
+            $error = true;
+            echo $string = "Your email didn't register in our system";
         }
     } else {
-        echo "your username didn't register";
+        $error = true;
+        echo $string = "Your username didn't register in our system";
     }
 }
 
@@ -79,6 +85,11 @@ include 'include/NavBarStyle.php';
                     <input type="submit" name="submit" class="btn btn-primary btn-block btn-lg">
 
                 </form>
+                <?php
+                if ($error) {
+                    echo "<div class='alert alert-danger'>$string";
+                    $error = false;
+                }  ?>
             </div>
         </div>
     </div>
