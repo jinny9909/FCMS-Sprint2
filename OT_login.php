@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             
             if(mysqli_num_rows($checkUser) >= 1)
             {
-                header("Location: OThomePage.php");
+                header("Location: http://foodedge-asia.rf.gd/OThomePage.php");
             }
             else 
             {

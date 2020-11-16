@@ -39,7 +39,7 @@
 						</div>
 						<div class="form-group">
 							<label for="InputPassword1">Confirm Password</label>
-							<input type="password" class="form-control" id="InputPassword1" placeholder="Retype your password">
+							<input type="password" class="form-control" id="InputPassword" placeholder="Retype your password">
 						</div>
 						<button type="submit" class="btn btn-warning btn-block" name="submit">Submit</button>
 					</form>
@@ -72,17 +72,24 @@
 
 			//Make sure user clicked the submit button
 			if(isset($_POST['submit'])){
-				$username = mysqli_real_escape_string($db, sanitise_input($_POST['OT_username']));
-				$FB_Link = mysqli_real_escape_string($db, sanitise_input($_POST['OT_FacebookLink']));
-				$password = mysqli_real_escape_string($db, sanitise_input($_POST['OT_password']));
+				$username = mysqli_real_escape_string($db, sanitise_input($_POST['InpurUsername']));
+				$FB_Link = mysqli_real_escape_string($db, sanitise_input($_POST['InputEmail']));
+				$password1 = mysqli_real_escape_string($db, sanitise_input($_POST['InputPassword1']));
+				$password2 = mysqli_real_escape_string($db, sanitise_input($_POST['InputPassword2']));
 
-				$sql = "INSERT INTO operationteam (Username, Password, FacebookLink) VALUES ('$username','$password','$FB_Link'')";
+				if($password1 == $password2){
+
+				$sql = "INSERT INTO operationteam (Username, Password, Email) VALUES ('$username','$password','$FB_Link'')";
 				// execute query
 				/*if (mysqli_query($db, $sql)){
 					echo"Successfully insert<br/>";	
 				}else{
 					echo"Failed to insert</br>";
 				}*/
+				if(mysql_query($db,$sql)){
+					echo"Successfully insert";
+				}
+			}
 			}
 			$db->close();
 		?>
