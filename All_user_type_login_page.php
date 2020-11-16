@@ -17,7 +17,7 @@
 			</div>
 			<p class="d-flex justify-content-center font-weight-bold display-2 text-center text-white">Welcome to FCMS</p>
 			<div class="card-deck d-flex justify-content-center">
-				<a href="MTlogin.php">
+				<a href="http://foodedge-asia.rf.gd/MTlogin.php">
 					<div class="card">
 						<img src="images/management_icon.png" class="card-img-top" alt="...">
 						<div class="card-footer text-center">
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="OT_login.php">
+				<a href="http://foodedge-asia.rf.gd/OT_login.php">
 					<div class="card">
 						<img src="images/operation_icon.png" class="card-img-top" alt="...">
 						<div class="card-footer text-center">
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="Client_login.php">
+				<a href="http://foodedge-asia.rf.gd/Client_login.php">
 					<div class="card">
 						<img src="images/client.png" class="card-img-top" alt="...">
 						<div class="card-footer text-center">
