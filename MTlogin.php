@@ -9,8 +9,6 @@
     <title>MT Login</title>
     <?php
     include 'include/NavBarStyle.php';
-
-
     ?>
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="styles/AllLogin.css">
@@ -23,10 +21,10 @@
     <?php
     $error=false;
  
-    $sname = "localhost";
-    $unmae = "root";
-    $password = "";
-    $db_name = "fcms";
+    $sname ="sql103.epizy.com";
+    $unmae = "epiz_26969817";
+    $password = "8tcX2yGy4HPkCx";
+    $db_name = "epiz_26969817_FCMS";
 
     $conn = mysqli_connect($sname, $unmae, $password, $db_name);
     session_start();
