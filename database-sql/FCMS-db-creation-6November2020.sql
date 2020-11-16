@@ -63,22 +63,8 @@ insert into Clients (ClientID, Status, MemberID, Username, Email, Password, Phon
 ("CL00000001", True, "CM00000001", "user1", "user1@gmail.com", "abc123", 1234567891,'images\\ProfilePicture\\user1.jpg'),
 ("CL00000002", True, "CM00000002", "user2", "user2@gmail.com", "abc123", 1234567892,'images\\ProfilePicture\\user2.jpg'),
 ("CL00000003", True, "CM00000003", "user3", "user3@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\user3.jpg'),
-("CL00000004", True, "CM00000004", "user4", "user4@gmail.com", "abc123", 1234567893,'images\\ProfilePicture\\user4.jpg');
+("CL00000004", True, "CM00000004", "Uncle Roger", "ur@gmail.com", "abc123", 1234567893,'images/ProfilePicture/Uncle Roger.png');
 
-/* get values */
-/*
-SELECT * FROM Clients;
-*/
-
-SELECT * FROM clients WHERE username = "user1" AND clientpassword = "abc123";
-
-/* update test */
-/*
-UPDATE Clients SET Status = 0 WHERE ClientID ='CL00000001';
-SELECT * FROM clients;
-SELECT * FROM operationteam;
-SELECT Status FROM clients WHERE ClientID ='CL00000001';
-*/
 
 /* Implement tracking system */
 create table Orders

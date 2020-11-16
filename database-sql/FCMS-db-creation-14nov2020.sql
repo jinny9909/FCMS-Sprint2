@@ -70,7 +70,7 @@ INSERT INTO `clients` (`ClientID`, `MemberID`, `Status`, `Username`, `Email`, `I
 ('CL00000001', 'CM00000001', 1, 'user1', 'ljunyee@gmail.com', 'images\\ProfilePicture\\user1.jpg', '123456', 1234567891, 'aeeegteRrA'),
 ('CL00000002', 'CM00000002', 1, 'user2', 'user2@gmail.com', 'images\\ProfilePicture\\user2.jpg', 'abc123', 1234567892, ''),
 ('CL00000003', 'CM00000003', 1, 'user3', 'user3@gmail.com', 'images\\ProfilePicture\\user3.jpg', 'abc123', 1234567893, ''),
-('CL00000004', 'CM00000004', 1, 'user4', 'user4@gmail.com', 'images\\ProfilePicture\\user4.jpg', 'abc123', 1234567893, '');
+('CL00000004', 'CM00000004', 1, 'Uncle Roger', 'ur@gmail.com', 'images/ProfilePicture/Uncle Roger.png', 'abc123', 1234567893, '');
 
 -- --------------------------------------------------------
 
