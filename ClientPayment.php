@@ -34,7 +34,7 @@
             </div>
 
             <div class="card-body mb-0 pb-0">
-                <p class="d-flex justify-content-center font-weight-bold mb-1">Total Amount for your order: <?php echo 'RM '.$totalAmount.'.00';?></p>
+                <p class="d-flex justify-content-center font-weight-bold mb-1">Total Amount for your order: <?php echo 'RM '.$totalAmount;?></p>
             </div>
 
             <div class="card-body d-flex justify-content-center">
