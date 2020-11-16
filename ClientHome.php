@@ -2,87 +2,88 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Homepage</title>
-    
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="styles/client_homepage.css">
-    <link rel="stylesheet" href="styles/client_catering.css">
-    <link rel="stylesheet" href="stylesheet/footer.css">
-    <?php
-      include 'include/NavBarStyle.php';
-    ?>
+  <title>Homepage</title>
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="styles/client_homepage.css">
+  <link rel="stylesheet" href="styles/client_catering.css">
+  <link rel="stylesheet" href="stylesheet/footer.css">
+  <?php
+  include 'include/NavBarStyle.php';
+  ?>
 </head>
 
 <body id="page-top">
 
-<!-- Navigation -->
-<?php
-    include 'include/ClientsNavBar.php';
-    include 'include/StringPath.php';
-?>
-<div id="fb-root"></div>
-<script>
+  <!-- Navigation -->
+  <?php
+  include 'include/ClientsNavBar.php';
+  include 'include/StringPath.php';
+  echo' <p> hello testubf </p>';
+  ?>
+  <div id="fb-root"></div>
+  <script>
     window.fbAsyncInit = function() {
-        FB.init({
-            xfbml: true,
-            version: 'v8.0'
-        });
+      FB.init({
+        xfbml: true,
+        version: 'v8.0'
+      });
     };
 
     (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>
+  </script>
 
-<!-- Your Chat Plugin code -->
-<div class="fb-customerchat" attribution=setup_tool page_id="101015995130353" theme_color="#d4a88c" logged_in_greeting="Hi there!!! How can we help you?" logged_out_greeting="Hi there!!! How can we help you?">
-</div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="height: 750px">
-                <img class="d-block w-100" src="images\FoodCarousel\homeslide1.png" style="background-size: cover;" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2 class="txt">Welcome To FoodEdge Gourment</h2>
-                    <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="height: 750px">
-                <img class="d-block w-100" src="images\FoodCarousel\homeslide2.png" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2 class="txt">Welcome To FoodEdge Gourment </h2>
-                    <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="height: 750px">
-                <img class="d-block w-100" src="images\FoodCarousel\homeslide3.png" alt="Third slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2 class="txt">Welcome To FoodEdge Gourment</h2>
-                    <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
-                </div>
-            </div>
+  <!-- Your Chat Plugin code -->
+  <div class="fb-customerchat" attribution=setup_tool page_id="101015995130353" theme_color="#d4a88c" logged_in_greeting="Hi there!!! How can we help you?" logged_out_greeting="Hi there!!! How can we help you?">
+  </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="height: 750px">
+        <img class="d-block w-100" src="images\FoodCarousel\homeslide1.png" style="background-size: cover;" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="txt">Welcome To FoodEdge Gourment</h2>
+          <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+      </div>
+      <div class="carousel-item" style="height: 750px">
+        <img class="d-block w-100" src="images\FoodCarousel\homeslide2.png" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="txt">Welcome To FoodEdge Gourment </h2>
+          <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="height: 750px">
+        <img class="d-block w-100" src="images\FoodCarousel\homeslide3.png" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="txt">Welcome To FoodEdge Gourment</h2>
+          <p class="slidetxt">Best Catering services in Kuching Sarawak!</p>
+        </div>
+      </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
   <!--about start-->
 
@@ -182,16 +183,16 @@
   <!-- Footer -->
 
   <?php
-	include 'ClientFooter.php'
-	
-	?>
-   
-   <div class="container-fluid text-center bg-secondary fixed-bottom">
-      <h4 class="copyright">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
-    </div>
+  include 'ClientFooter.php'
+
+  ?>
+
+  <div class="container-fluid text-center bg-secondary fixed-bottom">
+    <h4 class="copyright">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
+  </div>
 
 
- 
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
