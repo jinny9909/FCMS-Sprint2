@@ -4,5 +4,5 @@
     session_unset();
     session_destroy();
 
-    header("Location: MTlogin.php");
+    header("Location: index.php");
 ?>

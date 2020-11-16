@@ -2,7 +2,7 @@
 // connect to the database
 include 'backend/DatabaseConnect.php'; // global variables for connection
 $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-$sql = "SELECT * FROM Catering_package";
+$sql = "SELECT * FROM catering_package";
 $result = $db->query($sql);
 
 // store data for packageA

@@ -19,7 +19,7 @@
 <body id="page-top">
 
   <?php
-
+    include 'include/StringPath.php';
   
   ?>
   <div id="fb-root"></div>
