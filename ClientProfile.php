@@ -85,7 +85,7 @@
                     $newImage = 'images/ProfilePicture/'."$username". '.' . end($temp);
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $newImage)) {
                         //unlink("$profilePic"); //delete the old image
-                        $sql = "Update clients SET PicturePath ='$newImage' WHERE ClientID='$clientID'";
+                        $sql = "Update clients SET ImagePath ='$newImage' WHERE ClientID='$clientID'";
                         // execute query
 			            if (mysqli_query($db, $sql)){
                             echo "The file "."$newImage". " has been uploaded.";
@@ -112,7 +112,7 @@
         $email_address = "";
         $passWord = "";
         $profile_Pic = "";
-        $selectSQL = "SELECT MemberID, PicturePath, Username, PhoneNumber, Email, Password FROM clients WHERE ClientID='$clientID'";
+        $selectSQL = "SELECT MemberID, ImagePath, Username, PhoneNumber, Email, Password FROM clients WHERE ClientID='$clientID'";
         $result = $db->query($selectSQL);
 
          if($result->num_rows>0){
@@ -122,7 +122,7 @@
             $phone_Number = $row['PhoneNumber'];
             $email_address = $row['Email'];
             $passWord = $row['Password'];
-            $profile_Pic = $row['PicturePath'];
+            $profile_Pic = $row['ImagePath'];
          }
       
         $db->close();
