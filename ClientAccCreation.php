@@ -72,7 +72,7 @@
                     </div>
 
                      <div class="card mt-4 mb-0" >
-                            <div id="upload" class="card-header py-0">
+                            <div class="text-secondary bg-white card-header py-0">
                                 <h6 >Upload Profile Picture</h6>
                             </div>
                             <div class="card-body py-0 mt-2">
