@@ -100,6 +100,8 @@ insert into Orders (OrderID, ClientID, PackageID, NumPeople, OrderDate, Tracking
 
 /*
 SELECT * FROM Orders WHERE ClientID="CL00000001";
+SELECT * FROM Orders WHERE OrderID="OR00000004";
+SELECT * FROM Orders INNER JOIN catering_package ON orders.PackageID = catering_package.PackageID WHERE OrderID="OR00000004";
 */
 
 /* get values */

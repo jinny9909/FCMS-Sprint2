@@ -21,14 +21,15 @@
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
         // enter order ID, change to session
-        $orderID = 'CL00000001';
+        $orderID = 'OR00000004';
 
         // extract data using clientID
-        $sql = 'SELECT * FROM Orders INNER JOIN catering_package ON orders.PackageID = catering_package.PackageID WHERE OrderID = "'.$clientID.'";'; // sql script
+        $sql = 'SELECT * FROM orders INNER JOIN catering_package ON orders.PackageID = catering_package.PackageID WHERE OrderID="OR00000004";'; // sql script
         $result = $db->query($sql); // run sql script
 
         // print 
-        if ($result->rum_rows > 0) {
+        if ($result->num_rows > 0) {
+            echo "in";
             $row = $result->fetch_assoc();
             $cilentID = $row["ClientID"];
             $orderDate = $row["OrderDate"];
@@ -36,9 +37,6 @@
             $numOfPeople = $row["NumPeople"];
             $price = $row["PricePerPax"] * $row["NumPeople"];
         }
-
-        // close database connection
-        $db->close();
 
         // create new PDF instance
         $mpdf = new \Mpdf\Mpdf();
@@ -65,11 +63,16 @@
         // writes to file folder
         $filename = $orderID . '-' . 'invoice.pdf'; // generate unique filename
 
-        $mpdf->Output('invoice/invoice.pdf', \Mpdf\Output\Destination::FILE);
+        $mpdf->Output('invoice/'.$filename, \Mpdf\Output\Destination::FILE);
 
         // output to browser
         // $mpdf->Output($filename, 'D');
+
+        // close database connection
+        $db->close();
     ?>
-    <embed src="files/Brochure.pdf" type="application/pdf" width="100%" height="600px" />
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="invoice/OR00000004-invoice.pdf" type="application/pdf"></iframe>
+    </div>
 </body>
 </html>
