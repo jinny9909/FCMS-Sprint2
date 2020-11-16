@@ -16,12 +16,8 @@
 <?php
 $error=false;
 
-$hostname_dbconnection = "sql103.epizy.com"; 
-$database_dbconnection = "epiz_26969817";
-$username_dbconnection = "8tcX2yGy4HPkCx";
-$password_dbconnection = "epiz_26969817_FCMS";
-
-$conn = mysqli_connect($hostname_dbconnection, $username_dbconnection, $password_dbconnection, $database_dbconnection);
+include 'backend/DatabaseConnect.php'; // global variables for connection
+$conn = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
 mysqli_select_db($conn, $database_dbconnection) or die (mysqli_error($conn)); 
 
