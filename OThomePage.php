@@ -39,7 +39,7 @@ session_start();
             <div class="row center justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="OTCateringPackage1.php">
+                        <a href="http://foodedge-asia.rf.gd/OTCateringPackage1.php">
                             <div class="upper">
                                 <i class="fas fa-list icon"></i>
                             </div>
@@ -51,7 +51,7 @@ session_start();
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="OTFoodAndBeverages.php">
+                        <a href="http://foodedge-asia.rf.gd/OTFoodAndBeverages.php">
                             <div class="upper">
                                 <i class="far fa-edit icon"></i>
                             </div>
@@ -63,7 +63,7 @@ session_start();
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="OTTransactions.php">
+                        <a href="http://foodedge-asia.rf.gd/OTTransactions.php">
                             <div class="upper">
                                 <i class="fas fa-file-invoice-dollar icon"></i>
                             </div>
@@ -75,7 +75,7 @@ session_start();
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="OTUpdateOrders.php">
+                        <a href="http://foodedge-asia.rf.gd/OTUpdateOrders.php">
                             <div class="upper">
                                 <i class="fas fa-pen-alt icon"></i>
                             </div>

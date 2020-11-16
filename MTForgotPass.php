@@ -1,7 +1,10 @@
 <?php
 include 'MTdb.php';
 
-//check submit
+$error = false;
+$string = "";
+
+
 if (isset($_POST['submit'])) {
     $username = $_POST['Username'];
     $email = $_POST['Email'];
@@ -22,24 +25,28 @@ if (isset($_POST['submit'])) {
             $code = substr($code, 0, 10);
 
             // for send token
-            $linktoreset = "http://localhost/FCMSSprint2/FCMS-Sprint2/MTUpdatePassword.php?code=$code&username=$username";
+            $linktoreset = "http://foodedge-asia.rf.gd/MTUpdatePassword.php?code=$code&username=$username";
             $to = $db_email;
             $title = "passwrod reset";
-            $emailcontent = "this is automatic email, dont repply. For reset your password please click this link " . $linktoreset;
+            $emailcontent = "This is automatic generated email, dont repply. For reset your password please click this link " . $linktoreset;
             $headers = "From: FoodEdge Gourmate" . "\r\n";
             mail($to, $title, $emailcontent, $headers);
 
-            //echo $linktoreset;
+
             if (update_token($code, $username)) {
-                echo "your password have reset";
+                $error = true;
+                echo $string = "your password have reset";
             } else {
-                echo "please try again";
+                $error = true;
+                echo $string = "please try again";
             }
         } else {
-            echo "your email didn't register";
+            $error = true;
+            echo $string = "your email didn't register";
         }
     } else {
-        echo "your username didn't register";
+        $error = true;
+        echo $string = "your username didn't register";
     }
 }
 
@@ -75,14 +82,19 @@ if (isset($_POST['submit'])) {
                             <input type="text" name="Email" placeholder="email" class="form-control">
                         </div>
                     </div>
-                        <input type="submit" name="submit" class="btn btn-primary btn-block btn-lg">
+                    <input type="submit" name="submit" class="btn btn-primary btn-block btn-lg">
 
                 </form>
+                <?php
+                if ($error) {
+                    echo "<div class='alert alert-danger'>$string";
+                    $error = false;
+                }  ?>
             </div>
         </div>
     </div>
     <?php
-        include 'include/MTfooter.php'; 
+    include 'include/MTfooter.php';
     ?>
 </body>
 

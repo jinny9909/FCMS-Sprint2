@@ -16,10 +16,10 @@
 <?php
 $error=false;
 
-$hostname_dbconnection = "localhost"; 
-$database_dbconnection = "fcms";
-$username_dbconnection = "root";
-$password_dbconnection = "";
+$hostname_dbconnection = "sql103.epizy.com"; 
+$database_dbconnection = "epiz_26969817";
+$username_dbconnection = "8tcX2yGy4HPkCx";
+$password_dbconnection = "epiz_26969817_FCMS";
 
 $conn = mysqli_connect($hostname_dbconnection, $username_dbconnection, $password_dbconnection, $database_dbconnection);
 
@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             
             if(mysqli_num_rows($checkUser) >= 1)
             {
-                header("Location: OThomePage.php");
+                header("Location: http://foodedge-asia.rf.gd/OThomePage.php");
             }
             else 
             {

@@ -1,9 +1,9 @@
 <?php
 
-$hostname_dbconnection = "localhost"; 
-$database_dbconnection = "fcms";
-$username_dbconnection = "root";
-$password_dbconnection = "";
+$hostname_dbconnection = "sql103.epizy.com"; 
+$database_dbconnection = "epiz_26969817";
+$username_dbconnection = "8tcX2yGy4HPkCx";
+$password_dbconnection = "epiz_26969817_FCMS";
 
 $conn = mysqli_connect($hostname_dbconnection, $username_dbconnection, $password_dbconnection, $database_dbconnection);
 

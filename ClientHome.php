@@ -12,14 +12,15 @@
 
   <?php
   include 'include/NavBarStyle.php';
+  include 'include/ClientsNavBar.php';
   ?>
 </head>
 
 <body id="page-top">
 
   <?php
-  include 'include/ClientsNavBar.php';
-  include 'include/StringPath.php';
+
+  
   ?>
   <div id="fb-root"></div>
 

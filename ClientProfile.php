@@ -112,7 +112,7 @@
         $email_address = "";
         $passWord = "";
         $profile_Pic = "";
-        $selectSQL = "SELECT MemberID, ImagePath, Username, PhoneNumber, Email, Password FROM clients WHERE ClientID='$clientID'";
+        $selectSQL = "SELECT m.MemberID, c.ImagePath, c.Username, c.PhoneNumber, c.Email, c.Password FROM members m INNER JOIN clients c ON m.ClientID=c.ClientID WHERE c.ClientID='$clientID'";
         $result = $db->query($selectSQL);
 
          if($result->num_rows>0){

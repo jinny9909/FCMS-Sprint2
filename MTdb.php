@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'fcms';
+$host = 'sql103.epizy.com';
+$user = 'epiz_26969817';
+$pass = '8tcX2yGy4HPkCx';
+$db = 'epiz_26969817_FCMS';
 $link = mysqli_connect ($host, $user, $pass, $db);
  ?>
 

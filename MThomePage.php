@@ -39,7 +39,7 @@ html{
             <div class="row center justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="MT_OTAccCreation.php">
+                        <a href="http://foodedge-asia.rf.gd/MT_OTAccCreation.php">
                             <div class="upper">
                                 <i class="fas fa-user-circle icon"></i>
                             </div>
@@ -51,7 +51,7 @@ html{
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="MT_listofAccPage.php">
+                        <a href="http://foodedge-asia.rf.gd/MT_listofAccPage.php">
                             <div class="upper">
                                 <i class="fas fa-list icon"></i>
                             </div>
@@ -63,7 +63,7 @@ html{
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="outer">
-                        <a href="MTStatistics.php">
+                        <a href="http://foodedge-asia.rf.gd/MTStatistics.php">
                             <div class="upper">
                                 <i class="fas fa-chart-bar icon"></i>
                             </div>
