@@ -21,12 +21,8 @@
     <?php
     $error=false;
  
-    $sname ="sql103.epizy.com";
-    $unmae = "epiz_26969817";
-    $password = "8tcX2yGy4HPkCx";
-    $db_name = "epiz_26969817_FCMS";
-
-    $conn = mysqli_connect($sname, $unmae, $password, $db_name);
+    include 'backend/DatabaseConnect.php'; // global variables for connection
+    $conn = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
     session_start();
 
     if (!$conn) {

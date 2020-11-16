@@ -15,7 +15,6 @@
     <?php
         include 'include/MTNavBar.php';
         include 'backend/DatabaseConnect.php'; // global variables for connection
-
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
         if(isset($_POST["submit"])) {
