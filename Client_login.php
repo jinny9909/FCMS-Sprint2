@@ -71,6 +71,7 @@
         <?php
             if ($error) {
                 echo "<div class='alert alert-danger'>You have entered an incorrect password, or your account might have been suspended!</div>";
+                $error = false;
             }  
         ?>
         <div class="col-block text-center">

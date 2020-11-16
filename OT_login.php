@@ -73,9 +73,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     </div>
                 </div>
             </div>
-            <div class="text-center"> <a href="OTforgotPass.php">Forgotten password ? </a></div>
             <div class="form-group">
                 <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
+            </div>
+            <div class="text-center"> <a href="OTforgotPass.php">Forgotten password ? </a></div>
         </form>
 	</div>
 </body>
