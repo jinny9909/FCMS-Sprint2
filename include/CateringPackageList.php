@@ -1,4 +1,5 @@
 <?php
+    // catering package class
     class CateringPackage {
         private $id;
         private $name;
@@ -35,24 +36,56 @@
         }
     }
 
-    // creating catering packages doubly linked list
+    // returns all catering package objects, in a list of arrays
+    function get_all_packages() {
+        include 'backend/DatabaseConnect.php'; // global variables for connection
+        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+        $sql = 'SELECT * FROM Catering_package';
+        $result = $db->query($sql);
 
-    include 'backend/DatabaseConnect.php'; // global variables for connection
-    $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-    $sql = "SELECT * FROM Catering_package";
-    $result = $db->query($sql);
+        if ($result->num_rows > 0) {
+    
+            // create new doubly linked list
+            $packages_arr = Array();
+            
+            // iterate though all rows in db table
+            while ($row = $result->fetch_assoc()) {
+                // initialize new catering package in heap
+                $tempCatering = new CateringPackage($row["PackageID"], $row["PackageName"], $row["PackageDescription"], $row["PricePerPax"], $row["ImagePath"]);
+                // append catering package to array
+                array_push($packages_arr, $tempCatering);
+            }
+            $db->close();
 
-    if ($result->num_rows > 0) {
-        
-        // create new doubly linked list
-        $cateringPackages = new SplDoublyLinkedList();
-        
-        // iterate though all rows in db table
-        while ($row = $result->fetch_assoc()) {
-            //$tempCatering = new CateringPackage("1", "ABC", "ABBCS", "1222", "111//111");
-            $tempCatering = new CateringPackage($row["PackageID"], $row["PackageName"], $row["PackageDescription"], $row["PricePerPax"], $row["ImagePath"]);
-            $cateringPackages->push($tempCatering);
+            // return array
+            return $packages_arr;
         }
-        
-        $cateringPackages->setIteratorMode(SplDoublyLinkedList::IT_MODE_FIFO);
+        $db->close();
+        return false;
+    }
+    
+    // returns all other catering package objects, in a list of arrays
+    // accepts current catering ID to be excluded
+    function get_other_packages($lCateringID) {
+        include 'backend/DatabaseConnect.php'; // global variables for connection
+        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+        $sql = 'SELECT * FROM Catering_package WHERE PackageID != "'.$lCateringID.'"';
+        $result = $db->query($sql);
+
+        if ($result->num_rows > 0) {
+    
+            // create new doubly linked list
+            $packages_arr = Array();
+            
+            // iterate though all rows in db table
+            while ($row = $result->fetch_assoc()) {
+                // initialize new catering package in heap
+                $tempCatering = new CateringPackage($row["PackageID"], $row["PackageName"], $row["PackageDescription"], $row["PricePerPax"], $row["ImagePath"]);
+                array_push($packages_arr, $tempCatering);
+            }
+            $db->close();
+            return $packages_arr;
+        }
+        $db->close();
+        return false;
     }
