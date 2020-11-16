@@ -23,6 +23,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $uname = validate($_POST['username']);
     $pass = validate($_POST['password']);
+    $error = false;
 
     if (empty($uname)) {
         header("Location: MTlogin.php?error=User Name is required");
@@ -44,12 +45,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 header("Location: MThomePage.php");
                 exit();
             } else {
-                header("Location: MTlogin.php?error=Incorect User name or password");
-                exit();
+               
+                $error=true;
             }
         } else {
-            header("Location: MTlogin.php?error=Incorect User name or password");
-            exit();
+            $error=true;
+          
         }
     }
    
