@@ -14,6 +14,7 @@
 ?>
 
 <?php
+$error=false;
 
 $hostname_dbconnection = "localhost"; 
 $database_dbconnection = "fcms";
@@ -44,9 +45,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             }
             else 
             {
-            ?>
-                <script>alert('Wrong Password. Please Try Again.');</script>
-            <?php
+                $error=true;
+            
             }
 		}
 	}
@@ -77,6 +77,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             <div class="form-group">
                 <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
         </form>
+        <?php
+            if ($error) {
+                echo "<div class='alert alert-danger'>You have entered an incorrect password, or your account might have been suspended!</div>";
+            }  
+        ?>
 	</div>
 </body>
 
