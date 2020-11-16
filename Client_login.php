@@ -67,6 +67,12 @@
                 <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
             </div>
             <div class="text-center"> <a href="ClientForgetPass.php">Forgotten password ? </a></div>
+            <hr />
+            <div class="col-block text-center">
+                <a href='ClientAccCreation.php'>
+                    <button class="btn btn-secondary btn-lg">Create New Account</button>
+                </a>
+            </div>
         </form>
         <?php
             if ($error) {
@@ -74,11 +80,6 @@
                 $error = false;
             }  
         ?>
-        <div class="col-block text-center">
-            <a href='ClientAccCreation.php'>
-                <button class="btn btn-secondary btn-lg">Create New Account</button>
-            </a>
-        </div>
 	</div>
 </body>
 
