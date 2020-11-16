@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label for="pr">Package Price</label>
                         <input type="text" class="form-control" id="packageName" 
-                        placeholder=<?php echo $price_packageA ?>>
+                        value=<?php echo $price_packageA ?>>
                     </div>
                 </div>
             </div>

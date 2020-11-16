@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +9,7 @@
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="styles/client_homepage.css">
   <link rel="stylesheet" href="styles/client_catering.css">
-  <link rel="stylesheet" href="stylesheet/footer.css">
+
   <?php
   include 'include/NavBarStyle.php';
   ?>
@@ -18,30 +17,12 @@
 
 <body id="page-top">
 
-  <!-- Navigation -->
   <?php
   include 'include/ClientsNavBar.php';
   include 'include/StringPath.php';
-  echo' <p> hello testubf </p>';
   ?>
   <div id="fb-root"></div>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v8.0'
-      });
-    };
 
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
 
   <!-- Your Chat Plugin code -->
   <div class="fb-customerchat" attribution=setup_tool page_id="101015995130353" theme_color="#d4a88c" logged_in_greeting="Hi there!!! How can we help you?" logged_out_greeting="Hi there!!! How can we help you?">
@@ -182,10 +163,7 @@
 
   <!-- Footer -->
 
-  <?php
-  include 'ClientFooter.php'
 
-  ?>
 
   <div class="container-fluid text-center bg-secondary fixed-bottom">
     <h4 class="copyright">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
@@ -196,7 +174,24 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml: true,
+        version: 'v8.0'
+      });
+    };
 
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 </body>
+
 
 </html>

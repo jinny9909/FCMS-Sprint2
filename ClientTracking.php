@@ -103,7 +103,7 @@
             }
         ?>
     </section>
-    <footer class="bg-secondary text-white fixed-bottom" id="footermain">
+    <footer class="bg-secondary text-white" id="footermain">
         <div id="footerimage">
             <div class="container py-12">
                 <div class="row text-center">
@@ -115,7 +115,7 @@
                         <p class="text-white">Kuching, Sarawak, Malaysia</p>
                     </div>
                 </div>
-                <div class="container-fluid text-center bg-secondary fixed-bottom">
+                <div class="container-fluid text-center bg-secondary">
             <h4 class="copyright text-white">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
         </div>
             </div>

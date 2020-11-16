@@ -22,13 +22,14 @@
     ?>
     <?php
     $error=false;
-    session_start();
+ 
     $sname = "localhost";
     $unmae = "root";
     $password = "";
     $db_name = "fcms";
 
     $conn = mysqli_connect($sname, $unmae, $password, $db_name);
+    session_start();
 
     if (!$conn) {
         echo "Failed to connect MT table";
