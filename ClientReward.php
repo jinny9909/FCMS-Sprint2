@@ -101,8 +101,8 @@
             itemPoint = <?php echo $itemPoints; ?>;
 
             if (memberPoint > itemPoint) {
-                //location.href = "http://foodedge-asia.rf.gd/ClientRewardRedeem.php";
-                location.href = "ClientRewardRedeem.php";
+                
+                location.href = "http://foodedge-asia.rf.gd/ClientRewardRedeem.php";
             } else {
                 alert('Insufficient point to redeem item !');
             }
@@ -125,6 +125,9 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+    <?php 
+    include 'include/ClientFooter.php'
+    ?>
 </body>
 
 </html>
