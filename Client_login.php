@@ -65,7 +65,7 @@ $db->close();
             <div class="form-group">
                 <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Login</button>
             </div>
-            <div class="text-center"> <a href="ClientForgetPass.php">Forgotten password ? </a></div>
+            <div class="text-center"> <a href="http://foodedge-asia.rf.gd/ClientForgetPass.php">Forgotten password ? </a></div>
             <hr />
             <div class="col-block text-center">
                 <a href='ClientAccCreation.php'>

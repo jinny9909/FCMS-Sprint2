@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             ?>
                 <script>alert('Wrong Password. Please Try Again.');</script>
             <?php
-            header("Location: ../OT_login.php");
+            header("Location: http://foodedge-asia.rf.gd/OT_login.php");
             }
 
 			/*if(mysqli_num_rows($checkUser) >= 1) 

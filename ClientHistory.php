@@ -50,7 +50,8 @@
 							</thead>
 							<?php
 							// Create database connection
-							$db = mysqli_connect("localhost", "root", "", "fcms");
+							$db = mysqli_connect("sql103.epizy.com", "epiz_26969817", "8tcX2yGy4HPkCx", "epiz_26969817_FCMS");
+							
 							//Uncomment this section to check database connection
 							if ($db) {
 								echo "Successful Connect to DB<br/>";

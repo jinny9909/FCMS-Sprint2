@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
                 echo $string = "Your password have reset Please check your mail!";
             } else {
                 $error = true;
-                echo $string = "please try again";
+                echo $string = "Please try again!";
             }
         } else {
             $error = true;
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
         }
     } else {
         $error = true;
-        echo $string = "your username didn't register";
+        echo $string = "Your Username didn't register!";
     }
 }
 
