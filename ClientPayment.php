@@ -22,10 +22,6 @@
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
-
-        echo $_SESSION['orderPrice'];
-        echo $_SESSION['gainedPoints'];
-
         //Make it to two decimal
         $totalAmount = number_format($_SESSION['orderPrice'], 2, '.', '');
         $points = $_SESSION['gainedPoints'];

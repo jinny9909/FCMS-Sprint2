@@ -81,9 +81,6 @@
             $pCode = mysqli_real_escape_string($db,sanitise_input($_POST['postCode']));
             $sumAddress = $floor.$addrs.$pCode.$state.$city;
 
-            $_SESSION['orderPrice'] = $packagePrice*$numPeople; 
-            $_SESSION['gainedPoints'] = $packagePrice*$numPeople/10;
-
 			$sql = "SELECT * FROM orders";
 			$result = mysqli_query($db, $sql);
 			$numRows = mysqli_num_rows($result);
@@ -99,10 +96,14 @@
 			}
 
             $newOrderID = newID('orders');
-		    $createOrderSql = "INSERT INTO clients (ClientID, Status, Username, Email, ImagePath, Password, PhoneNumber) VALUES ('$newOrderID', '$clientID', '$packageID', '$numPeople', '$sumAddress', 0, '$date' , '$time')";
+		    $createOrderSql = "INSERT INTO orders (OrderID, ClientID, PackageID, NumPeople, DeliveryAddress, TrackingID, OrderDate, OrderTime) VALUES ('$newOrderID', '$clientID', '$packageID', '$numPeople', '$sumAddress', 0, '$date' , '$time')";
 			// execute query
 			if (mysqli_query($db, $createOrderSql)){
                 $displayString."Successfully insert<br/>";
+                $_SESSION['orderPrice'] = $packagePrice*$numPeople; 
+                $_SESSION['gainedPoints'] = $packagePrice*$numPeople/10;
+                $_SESSION['orderID'] = $newOrderID;
+                header('Location:ClientPayment.php');
                 //echo "<script> alert($displayString); </script>";
 			}else{
                 $displayString."Failed to insert</br>";
@@ -114,14 +115,14 @@
 
    <div class="container mt-5 pt-5">
    <div class="jumbotron pb-3 mb-3">
-        <form method="post" action="ClientPayment.php" >
+        <form method="post" action="ClientCheckout.php">
             <div class="card">
                 <div class="card-header text-center" id="cardHeader">
                     <h2><b>Checkout Catering Order</b></h2>   
                 </div>
                 <div class="card-body mb-0 pb-0 ">
                     <h3 class="text-center"><b>Catering Order Basic Details</b></h3>    
-                    <!--div class="form-group" ">
+                    <!--div class="form-group">
                         <label>Phone number: </label>
                         <input type="tel" class="form-control mx-auto" name="phone_number" placeholder="Phone number" required="required">
                     </div-->
