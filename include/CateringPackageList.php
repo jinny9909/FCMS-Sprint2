@@ -40,7 +40,7 @@
     function get_all_packages() {
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-        $sql = 'SELECT * FROM Catering_package';
+        $sql = 'SELECT * FROM catering_package';
         $result = $db->query($sql);
 
         if ($result->num_rows > 0) {
@@ -69,7 +69,7 @@
     function get_other_packages($lCateringID) {
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-        $sql = 'SELECT * FROM Catering_package WHERE PackageID != "'.$lCateringID.'"';
+        $sql = 'SELECT * FROM catering_package WHERE PackageID != "'.$lCateringID.'"';
         $result = $db->query($sql);
 
         if ($result->num_rows > 0) {

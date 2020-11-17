@@ -68,7 +68,7 @@ session_start();
                     <div class="outer">
                         <a href="#">
                             <div class="upper">
-                                <img src="' . $arrayExclude[$int]->get_imagePath() . '" alt="western food">
+                                <img src="' . $arrayExclude[$int]->get_imagePath() . '" alt="catering package">
                             </div>
                             <div class="lower">
                                 <span>' . $arrayExclude[$int]->get_name() . '</span>
@@ -81,61 +81,6 @@ session_start();
             </div>
         </div>
     </section>
-
-    </section>
-    <section id="other">
-        <?php
-
-     
-
-        for ($int = 0; $int < count($arrayExclude); $int++) {
-            echo '
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2>Others</h2>
-                </div>
-            </div>
-            <div class="row  justify-content-center">
-                <div class="col-lg-3 col-md-3 col-sm-5 col-5">
-                    <div class="outer">
-                        <a href="#">
-                            <div class="upper">
-                                <img src="'.$arrayExclude[$int]->get_imagePath() .'"alt="western food">
-                            </div>
-                            <div class="lower">
-                                <span>'.$arrayExclude[$int]->get_name().'</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>  ';
-        }
-        ?>
-        <?php
-
-
-
-        for ($int = 0; $int < count($arrayExclude); $int++) {
-            echo '
-                <div class="col-lg-3 col-md-3 col-sm-5 col-5">
-                    <div class="outer">
-                        <a href="#">
-                            <div class="upper">
-                            <img src="'.$arrayExclude[$int]->get_imagePath().'"alt="western food">
-                            </div>
-                            <div class="lower">
-                            <span>'.$arrayExclude[$int]->get_name().'</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        ';
-        }
-        ?>
-    </section>
-
 
     <!-- Footer -->
     <?php
