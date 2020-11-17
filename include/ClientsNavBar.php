@@ -12,8 +12,9 @@
           <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="http://foodedge-asia.rf.gd/ClientHome.php">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="http://foodedge-asia.rf.gd/ClientMenu.php">Menu</a></li>
-          <li class="nav-item"><a class="nav-link" href="http://foodedge-asia.rf.gd/ClientOrders.php">Orders</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://foodedge-asia.rf.gd/ClientHistory.php">Orders</a></li>
           <li class="nav-item"><a class="nav-link" href="http://foodedge-asia.rf.gd/ClientTracking.php">Track</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://foodedge-asia.rf.gd/ClientProfile.php">Profile</a></li>
           <li class="nav-item"><a class="nav-link" href="http://foodedge-asia.rf.gd/index.php"><i class="fa fa-user" style="margin-right: 7px;"></i>Logout</a></li>
           </ul>
         </div>

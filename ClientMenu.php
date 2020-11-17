@@ -83,7 +83,7 @@
         </div>
     </section>
     <?php
-	include 'ClientFooter.php'
+	include 'include/ClientFooter.php'
 	?>
    
    <div class="container-fluid text-center bg-secondary">

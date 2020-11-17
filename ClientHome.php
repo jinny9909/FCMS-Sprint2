@@ -95,6 +95,7 @@
           <h2>Menu Catering</h2>
         </div>
       </div>
+      
       <div class="row">
         <div class="col-4">
           <div class="outer">
@@ -112,7 +113,7 @@
           <div class="outer">
             <a href="ClientMenu.php">
               <div class="upper">
-                <img src=<?php echo $image_packageB ?> alt="western food">
+                <img src= "images/packages/PackageB.jpg" alt="western food">
               </div>
               <div class="lower">
                 <span>Western Catering Package</span>
@@ -124,7 +125,7 @@
           <div class="outer">
             <a href="ClientMenu.php">
               <div class="upper">
-                <img src=<?php echo $image_packageC ?> alt="mix package">
+                <img src="images/packages/PackageC.jpg" alt="mix package">
               </div>
               <div class="lower">
                 <span>Mix Catering Package</span>

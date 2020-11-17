@@ -59,7 +59,7 @@
 							} else {
 								die("fail");
 							}
-							$sql = "SELECT OrderDate, OrderID, PackageID, TrackingStatus from orders";
+							$sql = "SELECT OrderDate, OrderID, PackageID, TrackingID from orders";
 							$result=$db-> query($sql);
 							
 							if ($result-> num_rows >0){
@@ -69,8 +69,8 @@
 								<td><?php echo $row['OrderDate']; ?></td>
 								<td><?php echo $row['OrderID']; ?></td>
 								<td><?php echo $row['PackageID']; ?></td>
-								<td><?php echo $row['TrackingStatus']; ?></td>
-								<td><a href="edit.php?eid=<?php echo $row["OrderID"] ?>">Edit</a></td>
+								<td><?php echo $row['TrackingID']; ?></td>
+								<td><a href="http://foodedge-asia.rf.gd/edit.php?eid=<?php echo $row["OrderID"] ?>">Edit</a></td>
 							</tr>
 							<?php
 								
