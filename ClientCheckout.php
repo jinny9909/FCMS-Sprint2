@@ -1,151 +1,59 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="FCMS">
     <meta name="author" content="Ooi Kuan Hao"/>
-    <meta name="description" content="Client Account Creation Page"/>
+    <meta name="description" content="Client Checkout Page"/>
+    <!--link rel='stylesheet' href='styles/ClientCheckout_Style.css'-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.min.css">
+
+    <title>Checkout Order</title>
+    <style>
+        body {
+            background: #a9927d !important;
+            font-family: 'Quebec Serial Bold', sans-serif;
+        }
+
+        #chkOutBtn {
+            margin-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 18px !important;
+            color: white !important;
+            background-color: #49111C !important;
+        }
+
+        #cardHeader {
+            background-color: #5E503F !important;
+            color: white !important;
+        }
+    </style>
     
     <!-- navbar css -->
     <?php
         include 'include/NavBarStyle.php';
     ?>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <title>Client Create Account</title>
-    <link rel='stylesheet' href='styles/ClientCheckout_Style.css'>
+
 </head>
 
 <body>
     <?php
+        session_start();
         include 'include/ClientsNavBar.php';
-    ?>
-    
-    <div class="signup-form">
-        <form method="post">
-            <div class="card text-white" style="width: 330px">   
-                <div class="card-body">
-                    <h2>Checkout Catering Order</h2>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <p>Phone number: </p>
-                            <input type="tel" class="form-control" name="phone_number" placeholder="Phone number" required="required">
-                        </div>
-                    </div>
+        include 'include/NewID.php';
 
-                    <div class="form-group">
-                        <div class="input-group text-right">
-                            <p>Catering event number of people: </p>
-                            <select id="inputPax" name="pax" class="form-control">
-                                <option disabled selected value="">Choose a number of people</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-group">
-                            <p>Catering event date and time: </p>
-                            <input type="date" class="form-control" name="dateTime" required="required">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Catering order delivery address-->
-            <div class="card text-white" style="width: 330px">
-                <div class="card-body">
-                    <h3>Catering Event Venue</h3></div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="floor_unit" placeholder="Floor/Unit #" required="required">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="street_address" placeholder="Street address" required="required">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-group">
-                                <select id="inputState" name="state" class="form-control" onclick="inputPax()">
-                                    <option disabled selected value="">Choose a state</option>
-                                    <option value="Sarawak">Sarawak</option>
-                                    <option value="Sabah">Sabah</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-group">
-                                <select id="inputState" name="city" class="form-control">
-                                    <option disabled selected value="">Choose a city</option>
-                                    <optgroup label = "Sarawak">
-                                        <option value="Kuching">Kuching</option>
-                                        <option value="Bintulu">Bintulu</option>
-                                        <option value="Kapit">Kapit</option>
-                                        <option value="Limbang">Limbang</option>
-                                        <option value="Miri">Miri</option>
-                                        <option value="Sarikei">Sarikei</option>
-                                        <option value="Sibu">Sibu</option>
-                                        <option value="Simanggang">Simanggang</option>
-                                        <option value="Sri Aman">Sri Aman</option>
-                                    </optgroup>
-
-                                    <optgroup label = "Sabah">
-                                        <option value="Kota Kinabalu">Kota Kinabalu</option>
-                                        <option value="Kudat">Kudat</option>
-                                        <option value="Lahad Datu">Lahad Datu</option>
-                                        <option value="Papar">Papar</option>
-                                        <option value="Putatan">Putatan</option>
-                                        <option value="Ranau">Ranau</option>
-                                        <option value="Sandakan">Sandakan</option>
-                                        <option value="Tawau">Tawau</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-
-                <div id="sessionDisplay">
-                    <?php  if(isset($_SESSION['cName']) && !empty($_SESSION['cName'])){?>
-                    <p>The selected catering package is: </br><?php echo $_SESSION['cName'];}?></p>
-
-                    <?php  if(isset($_SESSION['price']) && !empty($_SESSION['price'])){?>
-                    <p>Catering order total amount: <?php echo $_SESSION['price'];}?></p>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" name="submit_ordrCheckout" class="btn btn-primary btn-block btn-lg">Proceed to payment</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!--Connect to order table-->
-	<?php
+       //$clientID = $_SESSION['clientID'];
+       //$packageID = $_SESSION['packageID'];
+       //$packagePrice = $_SESSION['packagePrice'];
+        $packageID = "CP00000001";
+        $clientID = "CL00000002";
+        $packageID = "CP00000001";
+        $packagePrice = "20";
 		// Create database connection
-        $db = mysqli_connect("sql103.epizy.com", "epiz_26969817", "8tcX2yGy4HPkCx", "epiz_26969817_FCMS");
-				
+		$db = mysqli_connect("localhost", "root", "", "fcms");
+		$displayString = "";
+        $noError = 0;
 		//Uncomment this section to check database connection
 		if($db){
 			echo"Successful Connect to DB<br/>";
@@ -163,8 +71,18 @@
 
 		//Make sure user clicked the submit button
 		if(isset($_POST['submit_ordrCheckout'])){
+            $date = mysqli_real_escape_string($db, sanitise_input($_POST['datePicker']));
+            $time = mysqli_real_escape_string($db, sanitise_input($_POST['timePicker']));
+            $numPeople = mysqli_real_escape_string($db, sanitise_input($_POST['pax']));
+            $floor = mysqli_real_escape_string($db, sanitise_input($_POST['floor_unit']));
+            $addrs = mysqli_real_escape_string($db, sanitise_input($_POST['street_address']));
+            $state = mysqli_real_escape_string($db, sanitise_input($_POST['state']));
+            $city = mysqli_real_escape_string($db, sanitise_input($_POST['city']));
+            $pCode = mysqli_real_escape_string($db,sanitise_input($_POST['postCode']));
+            $sumAddress = $floor.$addrs.$pCode.$state.$city;
 
-            $date = mysqli_real_escape_string($db, $_POST['dateTime']);
+            $_SESSION['orderPrice'] = $packagePrice*$numPeople; 
+            $_SESSION['gainedPoints'] = $packagePrice*$numPeople/10;
 
 			$sql = "SELECT * FROM orders";
 			$result = mysqli_query($db, $sql);
@@ -173,49 +91,206 @@
 			if($numRows > 0){
 				echo "</br><b>".$numRows." Result Found!"."</b></br>";
 				while($row = mysqli_fetch_assoc($result)){
-					if($date == $row['OrderDate']){
-						echo "Date clashed!";
-					}
-					else{
-						echo "Date is available!";
-					}
+                    if($date == $row['OrderDate'] && $time == date("H:i",strtotime($row['OrderTime']))){
+                       echo "<script> alert('Time clashed on the same day please reselect!'); </script>";
+					    $noError=1;
+                    }
 				}
-			}else{
-				echo "Table is empty";
 			}
-            
 
-			/*$packageID = mysqli_real_escape_string($db, sanitise_input($_POST['OT_username']));
-			$date = mysqli_real_escape_string($db, sanitise_input($_POST['OT_FacebookLink']));
-			//$password = mysqli_real_escape_string($db, sanitise_input($_POST['OT_password']));
-
-			$sql = "INSERT INTO orders (PackageID, TrackingStatus, OrderDate) VALUES ('$packageID', 0 , '$date')";*/
+            $newOrderID = newID('orders');
+		    $createOrderSql = "INSERT INTO clients (ClientID, Status, Username, Email, ImagePath, Password, PhoneNumber) VALUES ('$newOrderID', '$clientID', '$packageID', '$numPeople', '$sumAddress', 0, '$date' , '$time')";
 			// execute query
-			if (mysqli_query($db, $sql)){
-				echo"Successfully insert<br/>";	
+			if (mysqli_query($db, $createOrderSql)){
+                $displayString."Successfully insert<br/>";
+                //echo "<script> alert($displayString); </script>";
 			}else{
-				echo"Failed to insert</br>";
+                $displayString."Failed to insert</br>";
+                //echo "<script> alert($displayString); </script>";
 			}
 		}
 		$db->close();
-        session_destroy();
     ?>
-    <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v8.0'
-      });
-    };
 
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+   <div class="container mt-5 pt-5">
+   <div class="jumbotron pb-3 mb-3">
+        <form method="post" action="ClientPayment.php" >
+            <div class="card">
+                <div class="card-header text-center" id="cardHeader">
+                    <h2><b>Checkout Catering Order</b></h2>   
+                </div>
+                <div class="card-body mb-0 pb-0 ">
+                    <h3 class="text-center"><b>Catering Order Basic Details</b></h3>    
+                    <!--div class="form-group" ">
+                        <label>Phone number: </label>
+                        <input type="tel" class="form-control mx-auto" name="phone_number" placeholder="Phone number" required="required">
+                    </div-->
+
+                    <div class="form-group">
+                        <label>Catering event number of people: </label>
+                        <select id="inputPax"  onchange=" getPaxValue()" name="pax" class="form-control mx-auto">
+                            <option disabled selected value="">Choose Serving Pax</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                            <option value="60">60</option>
+                            <option value="70">70</option>
+                            <option value="80">80</option>
+                            <option value="90">90</option>
+                            <option value="100">100</option>
+                        </select>
+                        <small id="paxHelp" class="form-text text-muted">Select the number of people which is within your range</small>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="datePicker">Catering event date: </label>
+                        <!--input type="text" class="form-control mx-auto" id="datetimepicker" name="date" required="required"-->
+                        <div class="input-group date" id="datePicker">
+                            <input type="text" class="form-control"  name="datePicker" required="required">
+                            <div class="input-group-addon input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!--label>Catering event time: </label>
+                        <input type="time" class="form-control mx-auto" name="time" required="required"-->
+                        <label for="timePicker">Catering event time: </label>
+                        <div class="input-group date" id="timePicker">
+                            <input type="text" class="form-control" name="timePicker" required="required" >
+                            <div class="input-group-addon input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Catering order delivery address-->
+            <div class="card mt-3" >
+                <div class="card-body">
+                    <h3 class="text-center"><b>Catering Event Venue</b></h3>
+                    <div class="form-group">
+                        <label>Floor/Unit#</label>
+                        <input type="text" class="form-control mx-auto" name="floor_unit" placeholder="eg: No. 26 / Block A 11-13" required="required">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Street address</label>
+                        <input type="text" class="form-control mx-auto" name="street_address" placeholder="eg: Jalan Song, Taman Ceria" required="required">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Post Code: </label>
+                        <input type="text" class="form-control mx-auto" name="postCode" placeholder="eg: 90300" required="required">
+                    </div>
+
+                    <div class="form-group">
+                        <label>State</label>
+                        <select id="inputState" name="state" class="form-control mx-auto" onclick="inputPax()">
+                            <option disabled selected value="">Choose a state</option>
+                            <option value="Sarawak">Sarawak</option>
+                            <option value="Sabah">Sabah</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>City</label>
+                        <select id="inputState" name="city" class="form-control mx-auto">
+                            <option disabled selected value="">Choose a city</option>
+                            <optgroup label = "Sarawak">
+                                <option value="Kuching">Kuching</option>
+                                <option value="Bintulu">Bintulu</option>
+                                <option value="Kapit">Kapit</option>
+                                <option value="Limbang">Limbang</option>
+                                <option value="Miri">Miri</option>
+                                <option value="Sarikei">Sarikei</option>
+                                <option value="Sibu">Sibu</option>
+                                <option value="Simanggang">Simanggang</option>
+                                <option value="Sri Aman">Sri Aman</option>
+                            </optgroup>
+
+                            <optgroup label = "Sabah">
+                                <option value="Kota Kinabalu">Kota Kinabalu</option>
+                                <option value="Kudat">Kudat</option>
+                                <option value="Lahad Datu">Lahad Datu</option>
+                                <option value="Papar">Papar</option>
+                                <option value="Putatan">Putatan</option>
+                                <option value="Ranau">Ranau</option>
+                                <option value="Sandakan">Sandakan</option>
+                                <option value="Tawau">Tawau</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p id="totalAmt" onchange=" getPaxValue()">Total price for catering order: </p>
+
+                <?php  if(isset($_SESSION['cName']) && !empty($_SESSION['cName'])){?>
+                <p>The selected catering package is: </br><?php echo $_SESSION['cName'];}?></p>
+
+                <?php  if(isset($_SESSION['price']) && !empty($_SESSION['price'])){?>
+                <p>Catering order total amount: <?php echo $_SESSION['price'];}?></p>
+            </div>
+
+            <div class="form-group mt-5">
+                <button id="chkOutBtn" type="submit" name="submit_ordrCheckout" class="btn btn-block btn-lg"><b>Proceed to payment</b></button>
+            </div>
+        </form>
+    </div>
+    </div>
+    
+    <!--datetimepicker-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        $(function () {
+            $.extend(true, $.fn.datetimepicker.defaults, {
+                icons: {
+                    time: 'far fa-clock',
+                    date: 'far fa-calendar',
+                    up: 'fas fa-arrow-up',
+                    down: 'fas fa-arrow-down',
+                    previous: 'fas fa-chevron-left',
+                    next: 'fas fa-chevron-right',
+                    today: 'far fa-calendar-check-o',
+                    clear: 'far fa-trash',
+                    close: 'far fa-times'
+                }
+            });
+        });
+
+        function getPaxValue(){
+            var value = document.getElementById("inputPax").value;
+            price = <?php echo $packagePrice; ?>;
+            totalAmount = value*price;
+            document.getElementById("totalAmt").innerHTML = "Total price for catering order: RM "+totalAmount+".00";
+		}
+    </script>
+
+    <!--set the time format to 24 hour-->
+    <script type="text/javascript">
+        $(function () {
+            $('#datePicker').datetimepicker({
+				format: 'YYYY-MM-DD',
+				ignoreReadonly: true
+            });
+        });
+        $(function () {
+            $('#timePicker').datetimepicker({
+				format: 'HH:mm',
+				ignoreReadonly: true
+            });
+        });
+    </script>
 </body>
 </html>

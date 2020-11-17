@@ -28,6 +28,102 @@
 <body>
     <?php
         include 'include/ClientsNavBar.php';
+        include 'include/NewID.php';
+        //Insert a new client account	
+        // connect to the database
+        include 'backend/DatabaseConnect.php'; // global variables for connection
+        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+				
+		//Uncomment this section to check database connection
+		if($db){
+			echo"Successful Connect to DB<br/>";
+		}else{
+			die("fail");
+		}
+
+		//Sanitise the input
+		function sanitise_input($data) {
+			$data = trim($data);
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return $data;
+		}
+
+		//Make sure user clicked the submit button
+		if(isset($_POST['signUp'])){
+            //Escape special characters for $db connection
+			$username = mysqli_real_escape_string($db, sanitise_input($_POST['username']));
+            $email = mysqli_real_escape_string($db, sanitise_input($_POST['email']));
+            $password = mysqli_real_escape_string($db, sanitise_input($_POST['password']));
+            $phoneNum = mysqli_real_escape_string($db, sanitise_input($_POST['phone_number']));   
+            $newClientID = newID('clients');
+
+            if(isset($_POST['createMembership'])){
+                $point = 0;
+                $newMemberID = newID('members');
+                $sql1 = "INSERT INTO members (MemberID,ClientID,MemberPoint) VALUES ('$newMemberID','$newClientID','$point')";
+                // execute query
+			    if (mysqli_query($db, $sql1)){
+				    echo"<br/>Successfully insert member<br/>";	
+			    }else{
+				    echo"<br/>Failed to insert member</br>";
+			    }
+            }
+
+            $target_dir = "images/ProfilePicture/";
+            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $img = "";
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+            //if (file_exists($_FILES['fileToUpload']['tmp_name']) || is_uploaded_file($_FILES['fileToUpload']['tmp_name'])){
+
+                // Check if image file is a actual image or fake image
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check !== false) {
+                    echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
+                } else {
+                     echo "File is not an image.";
+                $uploadOk = 0;
+                }
+            
+                // Check file size
+                if ($_FILES["fileToUpload"]["size"] > 500000) {
+                    echo "Sorry, your file is too large.";
+                    $uploadOk = 0;
+                }
+            
+                // Allow certain file formats
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                    $uploadOk = 0;
+                }
+            
+                // Check if $uploadOk is set to 0 by an error
+                if ($uploadOk == 0) {
+                    echo "Sorry, your file was not uploaded.";
+                // if everything is ok, try to upload file
+                } else {
+                    $temp = explode(".", $_FILES["fileToUpload"]["name"]);
+                    $newImage = 'images/ProfilePicture/'."$username". '.' . end($temp);
+                    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $newImage)) {
+                        $img = $newImage;
+                    } else {
+                         echo "Sorry, there was an error uploading your file.";
+                    }
+                }
+			}
+
+            $sql2 = "INSERT INTO clients (ClientID, Status, Username, Email, ImagePath, Password, PhoneNumber) VALUES ('$clientID', 1 ,'$username', '$email', '$img','$password', '$phoneNum')";
+			// execute query
+			if (mysqli_query($db, $sql2)){
+				echo"<br/>Successfully insert<br/>";	
+			}else{
+				echo"<br/>Failed to insert</br>";
+			}
+		//}
+		$db->close();
     ?>
     
     <div class="signup-form" style="margin-top: 110px;">
@@ -54,7 +150,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!--div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">
                                 <i class="fa fa-lock"></i>
@@ -62,7 +158,7 @@
                             </span>
                             <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
                         </div>
-                    </div>
+                    </div-->
 
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -173,75 +269,5 @@
             <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
         </form>
     </div>
-
-    <!--Insert a new client account-->
-	<?php	
-        // Create database connection
-
-		$db = mysqli_connect("sql103.epizy.com", "epiz_26969817", "8tcX2yGy4HPkCx", "epiz_26969817_FCMS");
-				
-		//Uncomment this section to check database connection
-		if($db){
-			echo"Successful Connect to DB<br/>";
-		}else{
-			die("fail");
-		}
-
-		//Sanitise the input
-		function sanitise_input($data) {
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
-			return $data;
-		}
-
-		//Make sure user clicked the submit button
-		if(isset($_POST['signUp'])){
-            $memberID = rand(1,200);
-            if(isset($_POST['createMembership'])){
-                $point = 0;
-                $sql1 = "INSERT INTO member (member_ID,member_point) VALUES ('$memberID','$point')";
-                // execute query
-			    if (mysqli_query($db, $sql1)){
-				    echo"<br/>Successfully insert member<br/>";	
-			    }else{
-				    echo"<br/>Failed to insert member</br>";
-			    }
-            }
-
-            //Escape special characters for $db connection
-			$username = mysqli_real_escape_string($db, sanitise_input($_POST['username']));
-            $email = mysqli_real_escape_string($db, sanitise_input($_POST['email']));
-            $password = mysqli_real_escape_string($db, sanitise_input($_POST['password']));
-            $phoneNum = mysqli_real_escape_string($db, sanitise_input($_POST['phone_number']));
-            //$address = mysqli_real_escape_string($db, sanitise_input($_POST['floor_unit'].$_POST['street_address'].$_POST['city'].$_POST['state'].$_POST['zip_code']));
-
-            $sql2 = "INSERT INTO client (ClientID, Username, Email, Password, PhoneNumber) VALUES ('$clientID','$username', '$email','$password', '$phoneNum')";
-			// execute query
-			if (mysqli_query($db, $sql2)){
-				echo"<br/>Successfully insert<br/>";	
-			}else{
-				echo"<br/>Failed to insert</br>";
-			}
-		}
-		$db->close();
-    ?>
-    <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v8.0'
-      });
-    };
-
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
 </body>
 </html>

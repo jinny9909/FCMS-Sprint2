@@ -17,18 +17,13 @@
 <body>
     <?php
         session_start();
-        include 'include/ClientsNavBar.php';
+        //include 'include/ClientsNavBar.php';
 
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
-
-        echo $_SESSION['orderPrice'];
-        echo $_SESSION['gainedPoints'];
-
         //Make it to two decimal
-        $totalAmount = number_format($_SESSION['orderPrice'], 2, '.', '');
-        $points = $_SESSION['gainedPoints'];
+        $totalAmount = number_format(10, 2, '.', '');
     ?>
 
 	<div class="container mt-5 pt-5">
@@ -39,14 +34,7 @@
             </div>
 
             <div class="card-body mb-0 pb-0">
-                <p class="d-flex justify-content-center font-weight-bold mb-1">Total Amount for your order: <?php echo 'RM '.$totalAmount;?></p>
-            </div>
-
-            <div class="card-body d-flex justify-content-center">
-                <div class="border w-75" id="clientDetails">
-                    <p class="font-weight-bold d-flex justify-content-center mb-1 mt-1">Rewards point to be earned:</p>
-                    <h6 class=" text-center"><?php echo $points;?> <b>points</b> </h6>
-                </div>
+                <p class="d-flex justify-content-center font-weight-bold mb-1">Total Amount for your membership fee: <?php echo 'RM '.$totalAmount;?></p>
             </div>
         </div>
 
@@ -82,8 +70,6 @@
             // Finalize the transaction
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-
-
                     // Show a success message to the buyer
                     alert('Transaction completed by ' + details.payer.name.given_name + '!');
                     window.location.replace("ClientHome.php");
