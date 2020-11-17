@@ -4,7 +4,7 @@
     echo'
     
 
-    <footer class=" text-white" id="footermain" style="background-color: #a9927d; ">
+    <footer class=" text-white" id="footermain" style=" background-image: url(images/footimage.png"); ">
     <div id="footerimage">
       <div class="container py-12">
         <div class="row text-center">

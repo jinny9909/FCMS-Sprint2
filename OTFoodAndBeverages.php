@@ -22,7 +22,7 @@
 <div class="container">
     <div class="jumbotron" style="margin-top: 100px; padding:30px; background-color:#F2F4F3;">
         <div class="card">
-            <h5 class="card-header">List Of Clients' Transactions</h5>
+            <h5 class="card-header">Edit Food and Beverage</h5>
             <div class="card-body">
                 <br />
                 <table class="table">
