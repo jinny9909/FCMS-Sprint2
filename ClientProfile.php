@@ -20,11 +20,14 @@
 
 <body>
     <?php
+        session_start();
         include 'include/ClientsNavBar.php';
         // connect to the database
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-        $clientID = "CL00000004";
+        //$clientID = "CL00000004";
+        $clientID = $_SESSION['clientID'];
+
          //Uncomment this section to check database connection
 		/*if($db){
 			echo"Successful Connect to DB<br/>";
