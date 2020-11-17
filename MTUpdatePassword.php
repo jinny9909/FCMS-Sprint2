@@ -20,7 +20,7 @@ if (isset($codes) && isset($username)) {
       if ($password == $confirmPassword) {
         echo "password is not the same";
         update_pass($confirmPassword, $username);
-        header('location:MTlogin.php');
+        header('location:http://foodedge-asia.rf.gd/MTlogin.php');
       } else {
         echo "password is different";
       }
