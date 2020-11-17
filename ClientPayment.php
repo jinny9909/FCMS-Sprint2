@@ -22,6 +22,8 @@
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
+        $clientID = "CL00000002";
+
         //Make it to two decimal
         $totalAmount = number_format($_SESSION['orderPrice'], 2, '.', '');
         $points = $_SESSION['gainedPoints'];
@@ -78,10 +80,11 @@
             // Finalize the transaction
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-
-
-                    // Show a success message to the buyer
-                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                    <?php
+			            $sql = "Update members SET MemberPoint='$points' WHERE ClientID='$clientID'";                    
+                        mysqli_query($db, $sql);
+                    ?>
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');// Show a success message to the buyer
                     window.location.replace("ClientHome.php");
                 });
             },
