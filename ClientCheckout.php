@@ -46,8 +46,8 @@
        //$clientID = $_SESSION['clientID'];
         $packageID = $_SESSION['packageID'];
         $packagePrice = $_SESSION['packagePrice'];
-        $clientID = $_SESSION['clientID'];
-        //$clientID = "CL00000002";
+        //$clientID = $_SESSION['clientID'];
+        $clientID = "CL00000002";
         //$packageID = "CP00000001";
         //$packagePrice = "20";
 		// Create database connection
@@ -103,7 +103,7 @@
                 $_SESSION['orderPrice'] = $packagePrice*$numPeople; 
                 $_SESSION['gainedPoints'] = $packagePrice*$numPeople/10;
                 $_SESSION['orderID'] = $newOrderID;
-                header('Location:ClientPayment.php');
+                header('Location:ClientInvoice.php');
                 //echo "<script> alert($displayString); </script>";
 			}else{
                 $displayString."Failed to insert</br>";
