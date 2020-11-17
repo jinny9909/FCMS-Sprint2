@@ -27,7 +27,7 @@
 
 <body>
     <?php
-        include 'include/ClientsNavBar.php';
+        //include 'include/ClientsNavBar.php';
         include 'include/NewID.php';
         //Insert a new client account	
         // connect to the database

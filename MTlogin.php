@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <?php
-    include 'include/MTNavBar.php';
+    //<?php
+   //include 'include/MTNavBar.php';
     ?>
     <?php
     $error=false;
@@ -44,10 +44,10 @@
         $error = false;
 
         if (empty($uname)) {
-            header("Location: MTlogin.php?error=User Name is required");
+            header("Location: http://foodedge-asia.rf.gd/MTlogin.php?error=User Name is required");
             exit();
         } else if (empty($pass)) {
-            header("Location: MTlogin.php?error=Password is required");
+            header("Location: http://foodedge-asia.rf.gd/MTlogin.php?error=Password is required");
             exit();
         } else {
             $sql = "SELECT * FROM `mtaccount` WHERE user_name='$uname' AND password='$pass'";
@@ -60,7 +60,7 @@
                     $_SESSION['user_name'] = $row['user_name'];
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['id'] = $row['id'];
-                    header("Location: MThomePage.php");
+                    header("Location: http://foodedge-asia.rf.gd/MThomePage.php");
                     exit();
                 } else {
 

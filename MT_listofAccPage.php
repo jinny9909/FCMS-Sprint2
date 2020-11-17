@@ -181,8 +181,10 @@
                 </div>
             </div>
         </div>
-        <input type="submit" name="submit" value="Submit" class="btn" id="submit">
+        <input type="submit" name="submit" value="Submit" class="btn-center" id="submit">
     </form>
+                        </br>
+                        </br>
     <?php
         include 'include/MTfooter.php'; 
     ?>

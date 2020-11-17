@@ -41,7 +41,7 @@ $db->close();
 
 <body>
     <?php
-    include 'include/ClientsNavBar.php';
+   // include 'include/ClientsNavBar.php';
     ?>
     <div class="signup-form" id="login" style="margin-top: 110px;">
         <form method="post" action="Client_login.php">
@@ -67,12 +67,13 @@ $db->close();
             </div>
             <div class="text-center"> <a href="http://foodedge-asia.rf.gd/ClientForgetPass.php">Forgotten password ? </a></div>
             <hr />
-            <div class="col-block text-center">
-                <a href='ClientAccCreation.php'>
+           
+        </form>
+        <div class="col-block text-center">
+                <a href='http://foodedge-asia.rf.gd/ClientAccCreation.php'>
                     <button class="btn btn-secondary btn-lg">Create New Account</button>
                 </a>
             </div>
-        </form>
         <?php
         if ($error) {
             echo "<div class='alert alert-danger'>You have entered an incorrect password, or your account might have been suspended!</div>";

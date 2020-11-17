@@ -19,7 +19,7 @@
 <body id="page-top">
 
   <?php
-    include 'include/StringPath.php';
+  
   
   ?>
   <div id="fb-root"></div>
@@ -101,7 +101,7 @@
           <div class="outer">
             <a href="ClientMenu.php">
               <div class="upper">
-                <img src=<?php echo $image_packageA ?> class="img-rounded" alt="chinese food">
+                <img src="images/packages/packageA.jpg" class="img-rounded" alt="chinese food">
               </div>
               <div class="lower">
                 <span> Chinese Catering Package</span>
