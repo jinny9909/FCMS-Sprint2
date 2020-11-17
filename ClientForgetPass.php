@@ -1,6 +1,7 @@
 <?php
 include 'ClientDB.php';
-
+$error = false;
+$string = "";
 //check submit
 if (isset($_POST['submit'])) {
     $username = $_POST['Username'];
@@ -22,7 +23,7 @@ if (isset($_POST['submit'])) {
             $code = substr($code, 0, 10);
 
             // for send token
-            $linktoreset = "http://localhost/FCMSSprint2/FCMS-Sprint2/ClientUpdatePassword.php?code=$code&username=$username";
+            $linktoreset = "http://foodedge-asia.rf.gd/ClientUpdatePassword.php?code=$code&username=$username";
             $to = $db_email;
             $title = "passwrod reset";
             $emailcontent = "this is automatic email, dont repply. For reset your password please click this link " . $linktoreset;
@@ -31,15 +32,19 @@ if (isset($_POST['submit'])) {
 
             //echo $linktoreset;
             if (update_token($code, $username)) {
-                echo "your password have reset";
+                $error = true;
+                echo $string = "Your password have reset Please check your mail!";
             } else {
-                echo "please try again";
+                $error = true;
+                echo $string = "please try again";
             }
         } else {
-            echo "your email didn't register";
+            $error = true;
+            echo $string = "Your email didn't register in our system! ";
         }
     } else {
-        echo "your username didn't register";
+        $error = true;
+        echo $string = "your username didn't register";
     }
 }
 
@@ -78,9 +83,15 @@ if (isset($_POST['submit'])) {
                     <input type="submit" name="submit" class="btn btn-primary btn-block btn-lg">
 
                 </form>
+                <?php
+                if ($error) {
+                    echo "<div class='alert alert-danger'>$string";
+                    $error = false;
+                }  ?>
             </div>
         </div>
     </div>
+
 </body>
 
 

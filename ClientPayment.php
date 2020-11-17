@@ -79,15 +79,19 @@
                 return actions.order.capture().then(function(details) {
                     // Show a success message to the buyer
                     alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                    window.location.replace("ClientHome.php");
+                    window.location.replace("http://foodedge-asia.rf.gd/ClientHome.php");
                 });
             },
             onCancel: function (data) {
             // Show a cancel page, or return to cart
                  alert('Payment canceled !');
-                window.location.replace("ClientPayment.php");
+                window.location.replace("http://foodedge-asia.rf.gd/ClientPayment.php");
             }
         }).render('#paypal-button-container');
     </script>
+       <?php
+	include 'ClientFooter.php'
+	?>
+
 </body>
 </html>

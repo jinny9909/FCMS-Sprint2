@@ -19,7 +19,7 @@
 <body id="page-top">
 
   <?php
-
+    include 'include/StringPath.php';
   
   ?>
   <div id="fb-root"></div>
@@ -163,10 +163,13 @@
   </section>
 
   <!-- Footer -->
+  <?php 
+  include 'include/ClientFooter.php'
+  ?>
 
 
 
-  <div class="container-fluid text-center bg-secondary fixed-bottom">
+  <div class="container-fluid text-center bg-secondary ">
     <h4 class="copyright">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
   </div>
 
