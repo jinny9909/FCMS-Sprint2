@@ -102,7 +102,7 @@
 
             if(memberPoint > itemPoint){
              //location.href = "http://foodedge-asia.rf.gd/ClientRewardRedeem.php";
-                location.href = "ClientRewardRedeem.php";
+                location.href = "http://foodedge-asia.rf.gd/ClientRewardRedeem.php";
 		    }else{
                alert('Insufficient point to redeem item !');      
 			}

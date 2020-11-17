@@ -1,8 +1,9 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,20 +11,21 @@
     <!-- Custom styles for this template -->
     <link href="styles/client_catering.css" rel="stylesheet">
     <?php
-        include 'include/NavBarStyle.php';
+    include 'include/NavBarStyle.php';
     ?>
 
 </head>
+
 <body id="page-top">
     <?php
-        include 'include/ClientsNavBar.php';
-        include 'include/StringPath.php';
+    include 'include/ClientsNavBar.php';
+    include 'include/CateringPackageList.php';
     ?>
     <section id="detail">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-5" id="selected-image">
-                    <img src="<?php echo $image_packageA ?>" width="250" alt="western food" id="selected">
+                    <img src="images\packages\packageA.jpg" width="250" alt="western food" id="selected">
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-5" id="selected-detail">
                     <p>Chinese Catering Package</p>
@@ -37,9 +39,9 @@
                         <li>Mixed Fresh Fruits</li>
                     </ul>
                     <?php
-                        $_SESSION["packagePrice"] = "17";
-                        $_SESSION["packageName"] = "Chinese cuisines Package";
-                        $_SESSION["packageID"] = "CP00000001";
+                    $_SESSION["packagePrice"] = "17";
+                    $_SESSION["packageName"] = "Chinese cuisines Package";
+                    $_SESSION["packageID"] = "CP00000001";
                     ?>
                     <div>
                         <button type="button" id="chkOutBtn" onclick="location.href='ClientCheckout.php'" name="checkOut_catering" class="btn btn-block btn-lg p-3 mb-2 bg-warning text-dark border-0">Checkout</button>
@@ -56,38 +58,89 @@
                 </div>
             </div>
             <div class="row  justify-content-center">
-                <div class="col-lg-3 col-md-3 col-sm-5 col-5">
+                <?php
+
+                $arrayExclude = get_other_packages("CP00000001");
+
+                for ($int = 0; $int < count($arrayExclude); $int++) {
+                    echo '               
+                     <div class="col-lg-3 col-md-3 col-sm-5 col-5">
                     <div class="outer">
                         <a href="#">
                             <div class="upper">
-                                <img src="images/packages/PackageB.jpg"alt="western food">
+                                <img src="' . $arrayExclude[$int]->get_imagePath() . '" alt="western food">
                             </div>
                             <div class="lower">
-                                <span>Western Catering Package</span>
+                                <span>' . $arrayExclude[$int]->get_name() . '</span>
                             </div>
                         </a>
                     </div>
+                </div>';
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <section id="other">
+        <?php
+
+     
+
+        for ($int = 0; $int < count($arrayExclude); $int++) {
+            echo '
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Others</h2>
                 </div>
+            </div>
+            <div class="row  justify-content-center">
                 <div class="col-lg-3 col-md-3 col-sm-5 col-5">
                     <div class="outer">
                         <a href="#">
                             <div class="upper">
-                                <img src="images/packages/PackageC.jpg" alt="mix package">
+                                <img src="'.$arrayExclude[$int]->get_imagePath() .'"alt="western food">
                             </div>
                             <div class="lower">
-                                <span>Mix Catering Package</span>
+                                <span>'.$arrayExclude[$int]->get_name().'</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>  ';
+        }
+        ?>
+        <?php
+
+
+
+        for ($int = 0; $int < count($arrayExclude); $int++) {
+            echo '
+                <div class="col-lg-3 col-md-3 col-sm-5 col-5">
+                    <div class="outer">
+                        <a href="#">
+                            <div class="upper">
+                            <img src="'.$arrayExclude[$int]->get_imagePath().'"alt="western food">
+                            </div>
+                            <div class="lower">
+                            <span>'.$arrayExclude[$int]->get_name().'</span>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        ';
+        }
+        ?>
     </section>
 
+
     <!-- Footer -->
-      <!-- Footer -->
-  <?php 
-  include 'include/ClientFooter.php'
-  ?>
+    <?php
+    include 'include/ClientFooter.php';
+    ?>
 </body>
+
 </html>
