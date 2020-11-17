@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Invoice</title>
     <?php
-    include 'include/NavBarStyle.php';
+        include 'include/NavBarStyle.php';
     ?>
 </head>
 
@@ -23,7 +23,8 @@
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
         // enter order ID, change to session
-        $orderID = 'OR00000001';
+        session_start();
+        $orderID = $_SESSION['orderID'];
 
         // extract data using clientID
         $sql = 'SELECT * FROM orders INNER JOIN catering_package ON orders.PackageID = catering_package.PackageID WHERE OrderID="'.$orderID.'";'; // sql script
@@ -82,7 +83,7 @@
     ?>
     <div style="margin-top:80px" class="container">
         <iframe class="row" width="100%" height="800px" src=<?php echo 'invoice/'.$filename ?> type="application/pdf"></iframe>
-        <form action="#" method="post">
+        <form action="ClientPayment.php" method="post">
             <button type="button" class="btn-sm btn-primary d-flex justify-content-center mt-1 mx-auto">Continue</button> 
         </form>
     </div>
