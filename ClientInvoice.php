@@ -29,7 +29,6 @@
 
         // print 
         if ($result->num_rows > 0) {
-            echo "in";
             $row = $result->fetch_assoc();
             $cilentID = $row["ClientID"];
             $orderDate = $row["OrderDate"];
@@ -38,12 +37,16 @@
             $price = $row["PricePerPax"] * $row["NumPeople"];
         }
 
+        // close database connection
+        $db->close();
+
         // create new PDF instance
         $mpdf = new \Mpdf\Mpdf();
 
         // Create the PDF
         $data = '';
-        $data .= '<h1>Invoice details</h1>';
+        $data = '<h1 style="text-align:center;">Food Edge Gourment</h1><hr />';
+        $data .= '<h2>Invoice</h2>';
 
         // Add data
         $data .= '<strong>Order number:</strong>'.'<br />';
@@ -53,9 +56,9 @@
         $data .= '<strong>Package name:</strong>'.'<br />';
         $data .= $packageName.'<br />'.'<br />';
         $data .= '<strong>Number of people:</strong>'.'<br />';
-        $data .= $numOfPeople.'<br />'.'<br />';
-        $data .= '<strong>Total price:</strong>'.'<br />';
-        $data .= 'RM '.$price.'<br />'.'<br />';
+        $data .= $numOfPeople.'<br /><br /><hr />';
+        $data .= '<p style="text-align:right;"><strong>Total price:</strong></p>';
+        $data .= '<p style="text-align:right;">RM '.$price.'</p><br />';
 
         // writes to pdf
         $mpdf->WriteHTML($data);
@@ -65,14 +68,17 @@
 
         $mpdf->Output('invoice/'.$filename, \Mpdf\Output\Destination::FILE);
 
-        // output to browser
-        // $mpdf->Output($filename, 'D');
-
-        // close database connection
-        $db->close();
+        // write path to orders database
+        // connect to database
+        include 'backend/DatabaseConnect.php'; // global variables for connection
+        $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
+        
     ?>
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="invoice/OR00000004-invoice.pdf" type="application/pdf"></iframe>
+    <div style="margin-top:80px" class="container">
+        <iframe class="row" width="100%" height="800px" src="invoice/OR00000004-invoice.pdf" type="application/pdf"></iframe>
+        <form action="#" method="post">
+            <button type="button" class="btn-sm btn-primary d-flex justify-content-center mt-1 mx-auto">Continue</button> 
+        </form>
     </div>
 </body>
 </html>
