@@ -44,12 +44,12 @@
         include 'include/NewID.php';
 
        //$clientID = $_SESSION['clientID'];
-       //$packageID = $_SESSION['packageID'];
-       //$packagePrice = $_SESSION['packagePrice'];
-        $packageID = "CP00000001";
+        $packageID = $_SESSION['packageID'];
+        $packagePrice = $_SESSION['packagePrice'];
+
         $clientID = "CL00000002";
-        $packageID = "CP00000001";
-        $packagePrice = "20";
+        //$packageID = "CP00000001";
+        //$packagePrice = "20";
 		// Create database connection
 		$db = mysqli_connect("localhost", "root", "", "fcms");
 		$displayString = "";
@@ -231,13 +231,13 @@
             </div>
 
             <div>
+                <?php  if(isset($_SESSION['packageName']) && !empty($_SESSION['packageName'])){?>
+                <p>The selected catering package is: <b></br><?php echo $_SESSION['packageName'];}?></b></p>
+
+                <?php  if(isset($_SESSION['packagePrice']) && !empty($_SESSION['packagePrice'])){?>
+                <p>Price per pax: <b>RM <?php echo $_SESSION['packagePrice'];}?>.00</b></p>
+
                 <p id="totalAmt" onchange=" getPaxValue()">Total price for catering order: </p>
-
-                <?php  if(isset($_SESSION['cName']) && !empty($_SESSION['cName'])){?>
-                <p>The selected catering package is: </br><?php echo $_SESSION['cName'];}?></p>
-
-                <?php  if(isset($_SESSION['price']) && !empty($_SESSION['price'])){?>
-                <p>Catering order total amount: <?php echo $_SESSION['price'];}?></p>
             </div>
 
             <div class="form-group mt-5">
@@ -274,7 +274,7 @@
             var value = document.getElementById("inputPax").value;
             price = <?php echo $packagePrice; ?>;
             totalAmount = value*price;
-            document.getElementById("totalAmt").innerHTML = "Total price for catering order: RM "+totalAmount+".00";
+            document.getElementById("totalAmt").innerHTML = "Total price for catering order: <b>RM "+totalAmount+".00</b>";
 		}
     </script>
 

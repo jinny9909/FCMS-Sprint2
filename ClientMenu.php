@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-5" id="selected-detail">
                     <p>Chinese Catering Package</p>
-                    <p>RM 500</p>
+                    <p>Price per pax: RM 17.00</p>
                     <p>Menu Details</p>
                     <ul class="infomation">
                         <li>Chinese Fried Rice</li>
@@ -37,11 +37,12 @@
                         <li>Mixed Fresh Fruits</li>
                     </ul>
                     <?php
-                        $_SESSION["price"] = "500";
-                        $_SESSION["cName"] = "Chinese cuisines";
+                        $_SESSION["packagePrice"] = "17";
+                        $_SESSION["packageName"] = "Chinese cuisines Package";
+                        $_SESSION["packageID"] = "CP00000001";
                     ?>
                     <div>
-                        <button type="button" onclick="location.href='ClientCheckout.php'" name="checkOut_catering" class="btn btn-primary btn-block btn-lg p-3 mb-2 bg-warning text-dark border-0">Checkout</button>
+                        <button type="button" id="chkOutBtn" onclick="location.href='ClientCheckout.php'" name="checkOut_catering" class="btn btn-block btn-lg p-3 mb-2 bg-warning text-dark border-0">Checkout</button>
                     </div>
                 </div>
             </div>
@@ -82,29 +83,13 @@
             </div>
         </div>
     </section>
-    <?php
-	include 'ClientFooter.php'
-	?>
-   
-   <div class="container-fluid text-center bg-secondary">
-      <h4 class="copyright text-white">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
-    </div>
-    <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v8.0'
-      });
-    };
 
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 </body>
 </html>
