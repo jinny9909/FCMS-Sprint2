@@ -24,7 +24,8 @@
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
         //echo $_SESSION['clientID'];
-        $clientID = "CL00000004";
+        $clientID = $_SESSION['clientID'];
+        //$clientID = "CL00000004";
         
         //Fetch data from the tables
         $clientSql = "SELECT m.MemberID, m.MemberPoint, c.Username FROM members m INNER JOIN clients c ON m.ClientID=c.ClientID WHERE c.ClientID = '$clientID'";

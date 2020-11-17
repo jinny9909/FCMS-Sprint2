@@ -21,8 +21,8 @@
 
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-
-        $clientID = "CL00000002";
+        $clientID = $_SESSION['clientID'];
+        //$clientID = "CL00000002";
 
         //Make it to two decimal
         $totalAmount = number_format($_SESSION['orderPrice'], 2, '.', '');
