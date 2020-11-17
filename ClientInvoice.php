@@ -23,10 +23,10 @@
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
 
         // enter order ID, change to session
-        $orderID = 'OR00000004';
+        $orderID = 'OR00000001';
 
         // extract data using clientID
-        $sql = 'SELECT * FROM orders INNER JOIN catering_package ON orders.PackageID = catering_package.PackageID WHERE OrderID="OR00000004";'; // sql script
+        $sql = 'SELECT * FROM orders INNER JOIN catering_package ON orders.PackageID = catering_package.PackageID WHERE OrderID="'.$orderID.'";'; // sql script
         $result = $db->query($sql); // run sql script
 
         // print 
@@ -74,10 +74,14 @@
         // connect to database
         include 'backend/DatabaseConnect.php'; // global variables for connection
         $db = new mysqli($SERVERNAME, $USERNAME, $PASSWORD, $DATABASE);
-        
+
+        // write to database
+        $sql = 'UPDATE orders SET PDFPath = "invoice//'.$filename.'" WHERE OrderID="'.$orderID.'";';
+        $db->query($sql);
+        $db->close();
     ?>
     <div style="margin-top:80px" class="container">
-        <iframe class="row" width="100%" height="800px" src="invoice/OR00000004-invoice.pdf" type="application/pdf"></iframe>
+        <iframe class="row" width="100%" height="800px" src=<?php echo 'invoice/'.$filename ?> type="application/pdf"></iframe>
         <form action="#" method="post">
             <button type="button" class="btn-sm btn-primary d-flex justify-content-center mt-1 mx-auto">Continue</button> 
         </form>
