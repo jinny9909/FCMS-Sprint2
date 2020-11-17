@@ -51,7 +51,7 @@
         //$packageID = "CP00000001";
         //$packagePrice = "20";
 		// Create database connection
-		$db = mysqli_connect("localhost", "root", "", "fcms");
+        $db = mysqli_connect("sql103.epizy.com", "epiz_26969817", "8tcX2yGy4HPkCx", "epiz_26969817_FCMS");
 		$displayString = "";
         $noError = 0;
 		//Uncomment this section to check database connection

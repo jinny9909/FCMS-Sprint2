@@ -9,7 +9,7 @@
   <title>OT | Catering Menu</title>
   <?php
   include 'include/NavBarStyle.php';
-  include 'include/StringPath.php';
+
   ?>
 </head>
 
@@ -26,17 +26,17 @@
         <div class="col-md-4 col-sm-6">
           <div class="product-grid2">
             <div class="product-image2">
-              <a href="OTCateringPackage2.php"> <img class="pic-1" src=<?php echo $image_packageA ?>> </a>
+              <a href="OTCateringPackage2.php"> <img class="pic-1" src="images/packages/packageA.jpg"> </a>
             </div>
             <div class="product-content">
-              <button type="button" class="btn btn-secondary badge-pill " id="btn_edit"><a href="OTCateringPackage2.php">Edit <?php echo $name_packageA ?></a></button>
+              <button type="button" class="btn btn-secondary badge-pill " id="btn_edit"><a href="OTCateringPackage2.php?eid=<?php echo $row["PackageID"] ?>">Edit <?php echo $name_packageA ?></a></button>
             </div>
           </div>
         </div>
         <div class="col-md-4 col-sm-6">
           <div class="product-grid2">
             <div class="product-image2">
-              <a href="OTCateringPackage2.php"> <img class="pic-1" src=<?php echo $image_packageB ?>> </a>
+              <a href="OTCateringPackage2.php?eid=<?php echo $row["PackageID"] ?>"> <img class="pic-1" src="images/packages/PackageB.jpg"> </a>
             </div>
             <div class="product-content">
               <button type="button" class="btn btn-secondary badge-pill " id="btn_edit"><a href="OTCateringPackage2.php">Edit <?php echo $name_packageB ?></a></button>
@@ -46,10 +46,10 @@
         <div class="col-md-4 col-sm-6">
           <div class="product-grid2">
             <div class="product-image2">
-              <a href="OTCateringPackage2.php"> <img class="pic-1" src=<?php echo $image_packageC ?>> </a>
+              <a href="OTCateringPackage2.php"> <img class="pic-1" src="images/packages/PackageC.jpg"> </a>
             </div>
             <div class="product-content">
-              <button type="button" class="btn btn-secondary badge-pill " id="btn_edit"><a href="OTCateringPackage2.php">Edit <?php echo $name_packageC ?></a></button>
+              <button type="button" class="btn btn-secondary badge-pill " id="btn_edit"><a href="OTCateringPackage2.php?eid=<?php echo $row["PackageID"] ?>">Edit <?php echo $name_packageC ?></a></button>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 <?php
-$db = mysqli_connect("localhost", "root", "", "fcms");
+
+$db = mysqli_connect("sql103.epizy.com", "epiz_26969817", "8tcX2yGy4HPkCx", "epiz_26969817_FCMS");
 //Uncomment this section to check database connection
 if ($db) {
 	echo "Successful Connect to DB<br/>";
@@ -21,12 +22,12 @@ if (isset($_REQUEST["eid"])) {
 <tr>
 <td>Tracking Status:</td>
 <td>
-<select name = "TrackingStatus">
-	<option value = "">Select Any One</option>
-	<option value = "Invoice issued">Invoice issued</option>
-	<option value = "Order confirmed">Order confirmed</option>
-	<option value = "Event preparing">Event preparing</option>
-	<option value = "Event dismantled">Event dismantled</option>
+<select name = "TrackingID">
+	<option value = "0">Select Any One</option>
+	<option value = "1">Invoice issued</option>
+	<option value = "2">Order confirmed</option>
+	<option value = "3">Event preparing</option>
+	<option value = "4">Event dismantled</option>
 </select>
 </td>
 </tr>
@@ -38,11 +39,11 @@ if (isset($_REQUEST["eid"])) {
 <?php
 	if(isset($_POST['submit'] )){
 		echo "abc";
-		$TrackingStatus = mysqli_real_escape_string($db, $_POST['TrackingStatus']);
-		$sql = " Update orders SET TrackingStatus = '$TrackingStatus' WHERE OrderID = '$eid'";
+		$TrackingID = mysqli_real_escape_string($db, $_POST['TrackingID']);
+		$sql = " Update orders SET TrackingID = '$TrackingID' WHERE OrderID = '$eid'";
 		if (mysqli_query($db, $sql)){
             echo"Successfully insert<br/>";
-			header('location:OTUpdateOrders.php');
+			header('location:http://foodedge-asia.rf.gd/OTUpdateOrders.php');
         }else{
             echo"Failed to insert</br>";
          }
