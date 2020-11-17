@@ -13,10 +13,14 @@
     include 'include/NavBarStyle.php';
     ?>
     <link rel='stylesheet' href='styles/ClientReward_Style.css'>
+    <?php
+    include 'include/ClientFooterStyle.php';
+    ?>
 </head>
 
 <body>
     <?php
+
     session_start();
 
     include 'include/ClientsNavBar.php';
@@ -67,7 +71,7 @@
             <div class="card">
                 <div class="card-header" id="cardTitle">
                     <h5 class=" font-weight-bold d-flex justify-content-center">This Month Rewards</h5>
-                    <p class="text-center mb-0">Reward Item Name: <b><?php echo $itemName; ?><b></p>
+                    <p class="text-center mb-0">Reward Item Name: <b><?php echo $itemName; ?></b></p>
                 </div>
                 <div class="card-body d-flex justify-content-center">
                     <img src="<?php echo $row['ItemImgPath']; ?>" alt="Item Image">
@@ -101,33 +105,27 @@
             itemPoint = <?php echo $itemPoints; ?>;
 
             if (memberPoint > itemPoint) {
-                
                 location.href = "http://foodedge-asia.rf.gd/ClientRewardRedeem.php";
+                //location.href = "ClientRewardRedeem.php";
             } else {
                 alert('Insufficient point to redeem item !');
             }
         };
     </script>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                xfbml: true,
-                version: 'v8.0'
-            });
-        };
 
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <?php 
-    include 'include/ClientFooter.php'
-    ?>
+    <br />
+    <br />
+
+    <div class="fixed-bottom">
+        <?php
+
+
+        include 'include/ClientFooter.php'
+
+
+
+        ?>
+    </div>
 </body>
 
 </html>

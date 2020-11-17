@@ -169,8 +169,7 @@
 
 
 
-  <div class="container-fluid text-center bg-secondary ">
-    <h4 class="copyright">&copy; 2020. All right are Reserved by FoodEdge Gourmate</h4>
+
   </div>
 
 
