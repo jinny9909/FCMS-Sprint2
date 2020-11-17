@@ -10,17 +10,15 @@
   <link rel="stylesheet" href="styles/client_homepage.css">
   <link rel="stylesheet" href="styles/client_catering.css">
 
-  <?php
-  include 'include/NavBarStyle.php';
-  include 'include/ClientsNavBar.php';
-  ?>
+
 </head>
 
 <body id="page-top">
 
-  <?php
-  
-  
+<?php
+  include 'include/NavBarStyle.php';
+  include 'include/ClientsNavBar.php';
+  include 'include/StringPath.php';
   ?>
   <div id="fb-root"></div>
 
